@@ -1,3 +1,5 @@
+"""Funções para espécies registradas em projetos."""
+
 from __future__ import annotations
 
 import pandas as pd
@@ -8,6 +10,15 @@ from ._utils import _ficharium_erro, _ficharium_requisicao
 def listar_especies(
     projeto_id: str, busca: str | None = None
 ) -> pd.DataFrame:
+    """Retorna a lista consolidada de espécies registradas em um projeto.
+
+    Args:
+        projeto_id: ID do projeto.
+        busca: Filtro parcial pelo nome científico (case-insensitive).
+
+    Returns:
+        DataFrame com colunas `nc`, `grupo`, `total_registros`, `metodologias`.
+    """
     res = _ficharium_erro(
         lambda: _ficharium_requisicao(
             "GET", f"fichas/{projeto_id}/especies"

@@ -1,3 +1,5 @@
+"""Funções para modelos de fichas e seus campos."""
+
 from __future__ import annotations
 
 import pandas as pd
@@ -6,6 +8,11 @@ from ._utils import _ficharium_erro, _ficharium_requisicao, _tipo_para_python
 
 
 def listar_modelos() -> pd.DataFrame:
+    """Retorna todos os modelos de ficha do usuário autenticado.
+
+    Returns:
+        DataFrame com colunas `id`, `nome`, `descricao`, `grupo`, `created`.
+    """
     res = _ficharium_erro(
         lambda: _ficharium_requisicao("GET", "modelos"),
         "Erro ao listar modelos",
@@ -22,6 +29,11 @@ def listar_modelos() -> pd.DataFrame:
 
 
 def campos_modelo(modelo_id: str) -> pd.DataFrame:
+    """Retorna os campos de um modelo, consolidando metadados e campos principais.
+
+    Returns:
+        DataFrame com colunas `field_id`, `label`, `widget`, `tipo`, `py_tipo`, `secao`.
+    """
     res = _ficharium_erro(
         lambda: _ficharium_requisicao("GET", f"modelos/{modelo_id}"),
         f"Modelo '{modelo_id}' nao encontrado",

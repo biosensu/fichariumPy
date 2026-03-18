@@ -1,3 +1,5 @@
+"""Funções para projetos e seus resumos."""
+
 from __future__ import annotations
 
 import pandas as pd
@@ -6,6 +8,11 @@ from ._utils import _ficharium_erro, _ficharium_requisicao
 
 
 def listar_projetos() -> pd.DataFrame:
+    """Retorna todos os projetos do usuário autenticado.
+
+    Returns:
+        DataFrame com colunas `id`, `nome`, `descricao`, `fichas_na_nuvem`, `cargo`.
+    """
     res = _ficharium_erro(
         lambda: _ficharium_requisicao("GET", "projetos"),
         "Erro ao listar projetos",
@@ -22,6 +29,7 @@ def listar_projetos() -> pd.DataFrame:
 
 
 def projeto(id: str) -> dict:
+    """Retorna os detalhes completos de um projeto pelo seu ID."""
     return _ficharium_erro(
         lambda: _ficharium_requisicao("GET", f"projetos/{id}"),
         f"Projeto '{id}' nao encontrado",
@@ -29,6 +37,11 @@ def projeto(id: str) -> dict:
 
 
 def modelos_projeto(projeto_id: str) -> pd.DataFrame:
+    """Retorna os modelos associados a um projeto.
+
+    Returns:
+        DataFrame com colunas `id`, `nome`, `descricao`, `grupo`.
+    """
     res = _ficharium_erro(
         lambda: _ficharium_requisicao("GET", f"projetos/{projeto_id}"),
         f"Projeto '{projeto_id}' nao encontrado",
@@ -45,6 +58,14 @@ def modelos_projeto(projeto_id: str) -> pd.DataFrame:
 
 
 def fichas_projeto(projeto_id: str) -> pd.DataFrame:
+    """Retorna todas as fichas de um projeto com metadados básicos.
+
+    Não inclui os dados de cada observação — use `listar_fichas()` para isso.
+
+    Returns:
+        DataFrame com colunas `id`, `modelo_id`, `modelo_nome`,
+        `criador_nome`, `created`, `updated`.
+    """
     res = _ficharium_erro(
         lambda: _ficharium_requisicao("GET", f"fichas/{projeto_id}"),
         f"Erro ao listar fichas do projeto '{projeto_id}'",

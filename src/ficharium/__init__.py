@@ -1,3 +1,18 @@
+"""Cliente Python para a API [Ficharium Cloud](https://ficharium.cloud).
+
+Permite autenticar, listar projetos, modelos e fichas de campo,
+e acessar listas de espécies consolidadas.
+
+## Início rápido
+
+```python
+from ficharium import *
+
+ficharium_login("seu@email.com")
+projetos = listar_projetos()
+```
+"""
+
 from ._utils import FichariumError
 from .auth import (
     ficharium_definir_token,

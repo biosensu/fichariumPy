@@ -12,5 +12,9 @@ dependencies = [
     "pandas>=2.0",
 ]
 
+[project.optional-dependencies]
+docs = ["pdoc"]
+
 [project.urls]
 Homepage = "https://ficharium.cloud"
+Documentation = "https://biosensu.github.io/fichariumPy"
