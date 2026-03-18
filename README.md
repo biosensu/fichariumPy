@@ -2,7 +2,7 @@
   <img src="fichariumPy.svg" alt="ficharium" width="300">
 </p>
 
-# ficharium
+# fichariumPy
 
 Cliente Python para o [Ficharium Cloud](https://ficharium.cloud). Permite autenticar, listar projetos, modelos e fichas de campo, e acessar listas de espécies consolidadas.
 

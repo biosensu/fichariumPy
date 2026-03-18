@@ -1,0 +1,943 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="pdoc 16.0.0"/>
+    <title>ficharium API documentation</title>
+
+    <style>/*! * Bootstrap Reboot v5.0.0 (https://getbootstrap.com/) * Copyright 2011-2021 The Bootstrap Authors * Copyright 2011-2021 Twitter, Inc. * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE) * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md) */*,::after,::before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;background-color:#fff;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}hr{margin:1rem 0;color:inherit;background-color:currentColor;border:0;opacity:.25}hr:not([size]){height:1px}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2}h1{font-size:calc(1.375rem + 1.5vw)}@media (min-width:1200px){h1{font-size:2.5rem}}h2{font-size:calc(1.325rem + .9vw)}@media (min-width:1200px){h2{font-size:2rem}}h3{font-size:calc(1.3rem + .6vw)}@media (min-width:1200px){h3{font-size:1.75rem}}h4{font-size:calc(1.275rem + .3vw)}@media (min-width:1200px){h4{font-size:1.5rem}}h5{font-size:1.25rem}h6{font-size:1rem}p{margin-top:0;margin-bottom:1rem}abbr[data-bs-original-title],abbr[title]{-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}ol,ul{padding-left:2rem}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:.875em}mark{padding:.2em;background-color:#fcf8e3}sub,sup{position:relative;font-size:.75em;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#0d6efd;text-decoration:underline}a:hover{color:#0a58ca}a:not([href]):not([class]),a:not([href]):not([class]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em;direction:ltr;unicode-bidi:bidi-override}pre{display:block;margin-top:0;margin-bottom:1rem;overflow:auto;font-size:.875em}pre code{font-size:inherit;color:inherit;word-break:normal}code{font-size:.875em;color:#d63384;word-wrap:break-word}a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:.875em;color:#fff;background-color:#212529;border-radius:.2rem}kbd kbd{padding:0;font-size:1em;font-weight:700}figure{margin:0 0 1rem}img,svg{vertical-align:middle}table{caption-side:bottom;border-collapse:collapse}caption{padding-top:.5rem;padding-bottom:.5rem;color:#6c757d;text-align:left}th{text-align:inherit;text-align:-webkit-match-parent}tbody,td,tfoot,th,thead,tr{border-color:inherit;border-style:solid;border-width:0}label{display:inline-block}button{border-radius:0}button:focus:not(:focus-visible){outline:0}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,select{text-transform:none}[role=button]{cursor:pointer}select{word-wrap:normal}select:disabled{opacity:1}[list]::-webkit-calendar-picker-indicator{display:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}::-moz-focus-inner{padding:0;border-style:none}textarea{resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{float:left;width:100%;padding:0;margin-bottom:.5rem;font-size:calc(1.275rem + .3vw);line-height:inherit}@media (min-width:1200px){legend{font-size:1.5rem}}legend+*{clear:left}::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-text,::-webkit-datetime-edit-year-field{padding:0}::-webkit-inner-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:textfield}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-color-swatch-wrapper{padding:0}::file-selector-button{font:inherit}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}iframe{border:0}summary{display:list-item;cursor:pointer}progress{vertical-align:baseline}[hidden]{display:none!important}</style>
+    <style>/*! syntax-highlighting.css */pre{line-height:125%;}span.linenos{color:inherit; background-color:transparent; padding-left:5px; padding-right:20px;}.pdoc-code .hll{background-color:#ffffcc}.pdoc-code{background:#f8f8f8;}.pdoc-code .c{color:#3D7B7B; font-style:italic}.pdoc-code .err{border:1px solid #FF0000}.pdoc-code .k{color:#008000; font-weight:bold}.pdoc-code .o{color:#666666}.pdoc-code .ch{color:#3D7B7B; font-style:italic}.pdoc-code .cm{color:#3D7B7B; font-style:italic}.pdoc-code .cp{color:#9C6500}.pdoc-code .cpf{color:#3D7B7B; font-style:italic}.pdoc-code .c1{color:#3D7B7B; font-style:italic}.pdoc-code .cs{color:#3D7B7B; font-style:italic}.pdoc-code .gd{color:#A00000}.pdoc-code .ge{font-style:italic}.pdoc-code .gr{color:#E40000}.pdoc-code .gh{color:#000080; font-weight:bold}.pdoc-code .gi{color:#008400}.pdoc-code .go{color:#717171}.pdoc-code .gp{color:#000080; font-weight:bold}.pdoc-code .gs{font-weight:bold}.pdoc-code .gu{color:#800080; font-weight:bold}.pdoc-code .gt{color:#0044DD}.pdoc-code .kc{color:#008000; font-weight:bold}.pdoc-code .kd{color:#008000; font-weight:bold}.pdoc-code .kn{color:#008000; font-weight:bold}.pdoc-code .kp{color:#008000}.pdoc-code .kr{color:#008000; font-weight:bold}.pdoc-code .kt{color:#B00040}.pdoc-code .m{color:#666666}.pdoc-code .s{color:#BA2121}.pdoc-code .na{color:#687822}.pdoc-code .nb{color:#008000}.pdoc-code .nc{color:#0000FF; font-weight:bold}.pdoc-code .no{color:#880000}.pdoc-code .nd{color:#AA22FF}.pdoc-code .ni{color:#717171; font-weight:bold}.pdoc-code .ne{color:#CB3F38; font-weight:bold}.pdoc-code .nf{color:#0000FF}.pdoc-code .nl{color:#767600}.pdoc-code .nn{color:#0000FF; font-weight:bold}.pdoc-code .nt{color:#008000; font-weight:bold}.pdoc-code .nv{color:#19177C}.pdoc-code .ow{color:#AA22FF; font-weight:bold}.pdoc-code .w{color:#bbbbbb}.pdoc-code .mb{color:#666666}.pdoc-code .mf{color:#666666}.pdoc-code .mh{color:#666666}.pdoc-code .mi{color:#666666}.pdoc-code .mo{color:#666666}.pdoc-code .sa{color:#BA2121}.pdoc-code .sb{color:#BA2121}.pdoc-code .sc{color:#BA2121}.pdoc-code .dl{color:#BA2121}.pdoc-code .sd{color:#BA2121; font-style:italic}.pdoc-code .s2{color:#BA2121}.pdoc-code .se{color:#AA5D1F; font-weight:bold}.pdoc-code .sh{color:#BA2121}.pdoc-code .si{color:#A45A77; font-weight:bold}.pdoc-code .sx{color:#008000}.pdoc-code .sr{color:#A45A77}.pdoc-code .s1{color:#BA2121}.pdoc-code .ss{color:#19177C}.pdoc-code .bp{color:#008000}.pdoc-code .fm{color:#0000FF}.pdoc-code .vc{color:#19177C}.pdoc-code .vg{color:#19177C}.pdoc-code .vi{color:#19177C}.pdoc-code .vm{color:#19177C}.pdoc-code .il{color:#666666}</style>
+    <style>/*! theme.css */:root{--pdoc-background:#fff;}.pdoc{--text:#212529;--muted:#6c757d;--link:#3660a5;--link-hover:#1659c5;--code:#f8f8f8;--active:#fff598;--accent:#eee;--accent2:#c1c1c1;--nav-hover:rgba(255, 255, 255, 0.5);--name:#0066BB;--def:#008800;--annotation:#007020;}</style>
+    <style>/*! layout.css */html, body{width:100%;height:100%;}html, main{scroll-behavior:smooth;}body{background-color:var(--pdoc-background);}@media (max-width:769px){#navtoggle{cursor:pointer;position:absolute;width:50px;height:40px;top:1rem;right:1rem;border-color:var(--text);color:var(--text);display:flex;opacity:0.8;z-index:999;}#navtoggle:hover{opacity:1;}#togglestate + div{display:none;}#togglestate:checked + div{display:inherit;}main, header{padding:2rem 3vw;}header + main{margin-top:-3rem;}.git-button{display:none !important;}nav input[type="search"]{max-width:77%;}nav input[type="search"]:first-child{margin-top:-6px;}nav input[type="search"]:valid ~ *{display:none !important;}}@media (min-width:770px){:root{--sidebar-width:clamp(12.5rem, 28vw, 22rem);}nav{position:fixed;overflow:auto;height:100vh;width:var(--sidebar-width);}main, header{padding:3rem 2rem 3rem calc(var(--sidebar-width) + 3rem);width:calc(54rem + var(--sidebar-width));max-width:100%;}header + main{margin-top:-4rem;}#navtoggle{display:none;}}#togglestate{position:absolute;height:0;opacity:0;}nav.pdoc{--pad:clamp(0.5rem, 2vw, 1.75rem);--indent:1.5rem;background-color:var(--accent);border-right:1px solid var(--accent2);box-shadow:0 0 20px rgba(50, 50, 50, .2) inset;padding:0 0 0 var(--pad);overflow-wrap:anywhere;scrollbar-width:thin; scrollbar-color:var(--accent2) transparent; z-index:1}nav.pdoc::-webkit-scrollbar{width:.4rem; }nav.pdoc::-webkit-scrollbar-thumb{background-color:var(--accent2); }nav.pdoc > div{padding:var(--pad) 0;}nav.pdoc .module-list-button{display:inline-flex;align-items:center;color:var(--text);border-color:var(--muted);margin-bottom:1rem;}nav.pdoc .module-list-button:hover{border-color:var(--text);}nav.pdoc input[type=search]{display:block;outline-offset:0;width:calc(100% - var(--pad));}nav.pdoc .logo{max-width:calc(100% - var(--pad));max-height:35vh;display:block;margin:0 auto 1rem;transform:translate(calc(-.5 * var(--pad)), 0);}nav.pdoc ul{list-style:none;padding-left:0;}nav.pdoc > div > ul{margin-left:calc(0px - var(--pad));}nav.pdoc li a{padding:.2rem 0 .2rem calc(var(--pad) + var(--indent));}nav.pdoc > div > ul > li > a{padding-left:var(--pad);}nav.pdoc li{transition:all 100ms;}nav.pdoc li:hover{background-color:var(--nav-hover);}nav.pdoc a, nav.pdoc a:hover{color:var(--text);}nav.pdoc a{display:block;}nav.pdoc > h2:first-of-type{margin-top:1.5rem;}nav.pdoc .class:before{content:"class ";color:var(--muted);}nav.pdoc .function:after{content:"()";color:var(--muted);}nav.pdoc footer:before{content:"";display:block;width:calc(100% - var(--pad));border-top:solid var(--accent2) 1px;margin-top:1.5rem;padding-top:.5rem;}nav.pdoc footer{font-size:small;}</style>
+    <style>/*! content.css */.pdoc{color:var(--text);box-sizing:border-box;line-height:1.5;background:none;}.pdoc .pdoc-button{cursor:pointer;display:inline-block;border:solid black 1px;border-radius:2px;font-size:.75rem;padding:calc(0.5em - 1px) 1em;transition:100ms all;}.pdoc .alert{padding:1rem 1rem 1rem calc(1.5rem + 24px);border:1px solid transparent;border-radius:.25rem;background-repeat:no-repeat;background-position:.75rem center;margin-bottom:1rem;}.pdoc .alert > em{display:none;}.pdoc .alert > *:last-child{margin-bottom:0;}.pdoc .alert.note{color:#084298;background-color:#cfe2ff;border-color:#b6d4fe;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23084298%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8%2016A8%208%200%201%200%208%200a8%208%200%200%200%200%2016zm.93-9.412-1%204.705c-.07.34.029.533.304.533.194%200%20.487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703%200-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381%202.29-.287zM8%205.5a1%201%200%201%201%200-2%201%201%200%200%201%200%202z%22/%3E%3C/svg%3E");}.pdoc .alert.tip{color:#0a3622;background-color:#d1e7dd;border-color:#a3cfbb;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%230a3622%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2%206a6%206%200%201%201%2010.174%204.31c-.203.196-.359.4-.453.619l-.762%201.769A.5.5%200%200%201%2010.5%2013a.5.5%200%200%201%200%201%20.5.5%200%200%201%200%201l-.224.447a1%201%200%200%201-.894.553H6.618a1%201%200%200%201-.894-.553L5.5%2015a.5.5%200%200%201%200-1%20.5.5%200%200%201%200-1%20.5.5%200%200%201-.46-.302l-.761-1.77a2%202%200%200%200-.453-.618A5.98%205.98%200%200%201%202%206m6-5a5%205%200%200%200-3.479%208.592c.263.254.514.564.676.941L5.83%2012h4.342l.632-1.467c.162-.377.413-.687.676-.941A5%205%200%200%200%208%201%22/%3E%3C/svg%3E");}.pdoc .alert.important{color:#055160;background-color:#cff4fc;border-color:#9eeaf9;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23055160%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2%200a2%202%200%200%200-2%202v12a2%202%200%200%200%202%202h12a2%202%200%200%200%202-2V2a2%202%200%200%200-2-2zm6%204c.535%200%20.954.462.9.995l-.35%203.507a.552.552%200%200%201-1.1%200L7.1%204.995A.905.905%200%200%201%208%204m.002%206a1%201%200%201%201%200%202%201%201%200%200%201%200-2%22/%3E%3C/svg%3E");}.pdoc .alert.warning{color:#664d03;background-color:#fff3cd;border-color:#ffecb5;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23664d03%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8.982%201.566a1.13%201.13%200%200%200-1.96%200L.165%2013.233c-.457.778.091%201.767.98%201.767h13.713c.889%200%201.438-.99.98-1.767L8.982%201.566zM8%205c.535%200%20.954.462.9.995l-.35%203.507a.552.552%200%200%201-1.1%200L7.1%205.995A.905.905%200%200%201%208%205zm.002%206a1%201%200%201%201%200%202%201%201%200%200%201%200-2z%22/%3E%3C/svg%3E");}.pdoc .alert.caution{color:#842029;background-color:#f8d7da;border-color:#f5c2c7;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23842029%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M11.46.146A.5.5%200%200%200%2011.107%200H4.893a.5.5%200%200%200-.353.146L.146%204.54A.5.5%200%200%200%200%204.893v6.214a.5.5%200%200%200%20.146.353l4.394%204.394a.5.5%200%200%200%20.353.146h6.214a.5.5%200%200%200%20.353-.146l4.394-4.394a.5.5%200%200%200%20.146-.353V4.893a.5.5%200%200%200-.146-.353zM8%204c.535%200%20.954.462.9.995l-.35%203.507a.552.552%200%200%201-1.1%200L7.1%204.995A.905.905%200%200%201%208%204m.002%206a1%201%200%201%201%200%202%201%201%200%200%201%200-2%22/%3E%3C/svg%3E");}.pdoc .alert.danger{color:#842029;background-color:#f8d7da;border-color:#f5c2c7;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23842029%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M5.52.359A.5.5%200%200%201%206%200h4a.5.5%200%200%201%20.474.658L8.694%206H12.5a.5.5%200%200%201%20.395.807l-7%209a.5.5%200%200%201-.873-.454L6.823%209.5H3.5a.5.5%200%200%201-.48-.641l2.5-8.5z%22/%3E%3C/svg%3E");}.pdoc .visually-hidden{position:absolute !important;width:1px !important;height:1px !important;padding:0 !important;margin:-1px !important;overflow:hidden !important;clip:rect(0, 0, 0, 0) !important;white-space:nowrap !important;border:0 !important;}.pdoc h1, .pdoc h2, .pdoc h3{font-weight:300;margin:.3em 0;padding:.2em 0;}.pdoc > section:not(.module-info) h1{font-size:1.5rem;font-weight:500;}.pdoc > section:not(.module-info) h2{font-size:1.4rem;font-weight:500;}.pdoc > section:not(.module-info) h3{font-size:1.3rem;font-weight:500;}.pdoc > section:not(.module-info) h4{font-size:1.2rem;}.pdoc > section:not(.module-info) h5{font-size:1.1rem;}.pdoc a{text-decoration:none;color:var(--link);}.pdoc a:hover{color:var(--link-hover);}.pdoc blockquote{margin-left:2rem;}.pdoc pre{border-top:1px solid var(--accent2);border-bottom:1px solid var(--accent2);margin-top:0;margin-bottom:1em;padding:.5rem 0 .5rem .5rem;overflow-x:auto;background-color:var(--code);}.pdoc code{color:var(--text);padding:.2em .4em;margin:0;font-size:85%;background-color:var(--accent);border-radius:6px;}.pdoc a > code{color:inherit;}.pdoc pre > code{display:inline-block;font-size:inherit;background:none;border:none;padding:0;}.pdoc > section:not(.module-info){margin-bottom:1.5rem;}.pdoc .modulename{margin-top:0;font-weight:bold;}.pdoc .modulename a{color:var(--link);transition:100ms all;}.pdoc .git-button{float:right;border:solid var(--link) 1px;}.pdoc .git-button:hover{background-color:var(--link);color:var(--pdoc-background);}.view-source-toggle-state,.view-source-toggle-state ~ .pdoc-code{display:none;}.view-source-toggle-state:checked ~ .pdoc-code{display:block;}.view-source-button{display:inline-block;float:right;font-size:.75rem;line-height:1.5rem;color:var(--muted);padding:0 .4rem 0 1.3rem;cursor:pointer;text-indent:-2px;}.view-source-button > span{visibility:hidden;}.module-info .view-source-button{float:none;display:flex;justify-content:flex-end;margin:-1.2rem .4rem -.2rem 0;}.view-source-button::before{position:absolute;content:"View Source";display:list-item;list-style-type:disclosure-closed;}.view-source-toggle-state:checked ~ .attr .view-source-button::before,.view-source-toggle-state:checked ~ .view-source-button::before{list-style-type:disclosure-open;}.pdoc .docstring{margin-bottom:1.5rem;}.pdoc section:not(.module-info) .docstring{margin-left:clamp(0rem, 5vw - 2rem, 1rem);}.pdoc .docstring .pdoc-code{margin-left:1em;margin-right:1em;}.pdoc h1:target,.pdoc h2:target,.pdoc h3:target,.pdoc h4:target,.pdoc h5:target,.pdoc h6:target,.pdoc .pdoc-code > pre > span:target{background-color:var(--active);box-shadow:-1rem 0 0 0 var(--active);}.pdoc .pdoc-code > pre > span:target{display:block;}.pdoc div:target > .attr,.pdoc section:target > .attr,.pdoc dd:target > a{background-color:var(--active);}.pdoc *{scroll-margin:2rem;}.pdoc .pdoc-code .linenos{user-select:none;}.pdoc .attr:hover{filter:contrast(0.95);}.pdoc section, .pdoc .classattr{position:relative;}.pdoc .headerlink{--width:clamp(1rem, 3vw, 2rem);position:absolute;top:0;left:calc(0rem - var(--width));transition:all 100ms ease-in-out;opacity:0;}.pdoc .headerlink::before{content:"#";display:block;text-align:center;width:var(--width);height:2.3rem;line-height:2.3rem;font-size:1.5rem;}.pdoc .attr:hover ~ .headerlink,.pdoc *:target > .headerlink,.pdoc .headerlink:hover{opacity:1;}.pdoc .attr{display:block;margin:.5rem 0 .5rem;padding:.4rem .4rem .4rem 1rem;background-color:var(--accent);overflow-x:auto;}.pdoc .classattr{margin-left:2rem;}.pdoc .decorator-deprecated{color:#842029;}.pdoc .decorator-deprecated ~ span{filter:grayscale(1) opacity(0.8);}.pdoc .name{color:var(--name);font-weight:bold;}.pdoc .def{color:var(--def);font-weight:bold;}.pdoc .signature{background-color:transparent;}.pdoc .param, .pdoc .return-annotation{white-space:pre;}.pdoc .signature.multiline .param{display:block;}.pdoc .signature.condensed .param{display:inline-block;}.pdoc .annotation{color:var(--annotation);}.pdoc .view-value-toggle-state,.pdoc .view-value-toggle-state ~ .default_value{display:none;}.pdoc .view-value-toggle-state:checked ~ .default_value{display:inherit;}.pdoc .view-value-button{font-size:.5rem;vertical-align:middle;border-style:dashed;margin-top:-0.1rem;}.pdoc .view-value-button:hover{background:white;}.pdoc .view-value-button::before{content:"show";text-align:center;width:2.2em;display:inline-block;}.pdoc .view-value-toggle-state:checked ~ .view-value-button::before{content:"hide";}.pdoc .inherited{margin-left:2rem;}.pdoc .inherited dt{font-weight:700;}.pdoc .inherited dt, .pdoc .inherited dd{display:inline;margin-left:0;margin-bottom:.5rem;}.pdoc .inherited dd:not(:last-child):after{content:", ";}.pdoc .inherited .class:before{content:"class ";}.pdoc .inherited .function a:after{content:"()";}.pdoc .search-result .docstring{overflow:auto;max-height:25vh;}.pdoc .search-result.focused > .attr{background-color:var(--active);}.pdoc .attribution{margin-top:2rem;display:block;opacity:0.5;transition:all 200ms;filter:grayscale(100%);}.pdoc .attribution:hover{opacity:1;filter:grayscale(0%);}.pdoc .attribution img{margin-left:5px;height:27px;vertical-align:bottom;width:50px;transition:all 200ms;}.pdoc table{display:block;width:max-content;max-width:100%;overflow:auto;margin-bottom:1rem;}.pdoc table th{font-weight:600;}.pdoc table th, .pdoc table td{padding:6px 13px;border:1px solid var(--accent2);}</style>
+    <style>/*! custom.css */@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300..900;1,300..900&display=swap");:root{--pdoc-background:#0d161c;--pdoc-text:#c1e5eb;--pdoc-accent:#5dbac0;--pdoc-muted:#7a9da3;--pdoc-bg-code:#131f28;}html, body{background-color:var(--pdoc-background) !important;color:var(--pdoc-text) !important;font-family:"Public Sans", sans-serif !important;}a{color:var(--pdoc-accent) !important;}a:hover{color:#8ad3d8 !important;}h1, h2, h3, h4, h5, h6{color:var(--pdoc-text) !important;}nav.pdoc{background-color:var(--pdoc-background) !important;}nav a{color:var(--pdoc-muted) !important;}nav a:hover, nav a.current{color:var(--pdoc-accent) !important;}code, pre, .pdoc code{background-color:var(--pdoc-bg-code) !important;color:var(--pdoc-text) !important;}.docstring{border-left-color:var(--pdoc-accent) !important;}input[type="search"]{background-color:var(--pdoc-bg-code) !important;color:var(--pdoc-text) !important;border-color:#1a2a34 !important;}.attr .annotation{color:var(--pdoc-muted) !important;}footer{color:var(--pdoc-muted) !important;}</style></head>
+<body>
+    <nav class="pdoc">
+        <label id="navtoggle" for="togglestate" class="pdoc-button"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke-linecap='round' stroke="currentColor" stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg></label>
+        <input id="togglestate" type="checkbox" aria-hidden="true" tabindex="-1">
+        <div>
+
+
+            <h2>Contents</h2>
+            <ul>
+  <li><a href="#inicio-rapido">Início rápido</a></li>
+</ul>
+
+
+
+            <h2>API Documentation</h2>
+                <ul class="memberlist">
+            <li>
+                    <a class="class" href="#FichariumError">FichariumError</a>
+                            <ul class="memberlist">
+                </ul>
+
+            </li>
+            <li>
+                    <a class="function" href="#ficharium_token">ficharium_token</a>
+            </li>
+            <li>
+                    <a class="function" href="#ficharium_definir_token">ficharium_definir_token</a>
+            </li>
+            <li>
+                    <a class="function" href="#ficharium_logout">ficharium_logout</a>
+            </li>
+            <li>
+                    <a class="function" href="#ficharium_login">ficharium_login</a>
+            </li>
+            <li>
+                    <a class="function" href="#listar_projetos">listar_projetos</a>
+            </li>
+            <li>
+                    <a class="function" href="#projeto">projeto</a>
+            </li>
+            <li>
+                    <a class="function" href="#modelos_projeto">modelos_projeto</a>
+            </li>
+            <li>
+                    <a class="function" href="#fichas_projeto">fichas_projeto</a>
+            </li>
+            <li>
+                    <a class="function" href="#listar_modelos">listar_modelos</a>
+            </li>
+            <li>
+                    <a class="function" href="#campos_modelo">campos_modelo</a>
+            </li>
+            <li>
+                    <a class="function" href="#listar_fichas">listar_fichas</a>
+            </li>
+            <li>
+                    <a class="function" href="#ficha">ficha</a>
+            </li>
+            <li>
+                    <a class="function" href="#listar_especies">listar_especies</a>
+            </li>
+            <li>
+                    <a class="function" href="#expandir_especies">expandir_especies</a>
+            </li>
+            <li>
+                    <a class="function" href="#expandir_coordenadas">expandir_coordenadas</a>
+            </li>
+            <li>
+                    <a class="function" href="#expandir_ponto">expandir_ponto</a>
+            </li>
+    </ul>
+
+
+
+        <a class="attribution" title="pdoc: Python API documentation generator" href="https://pdoc.dev" target="_blank">
+            built with <span class="visually-hidden">pdoc</span><img
+                alt="pdoc logo"
+                src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20role%3D%22img%22%20aria-label%3D%22pdoc%20logo%22%20width%3D%22300%22%20height%3D%22160%22%20viewBox%3D%220%200%20150%2080%22%3E%3Ctitle%3Epdoc%3C/title%3E%3Cpath%20d%3D%22M132.316%2048.886c.276-4.679%202.342-6.698%204.409-7.982s4.27-1.165%206.751-1.055c1.586.07%203.044.156%204.222-.482%201.142-.619%202.026-1.932%202.162-3.739.268-3.576-1.929-5.368-5.006-5.551s-7.599.524-10.517%201.606c-4.455%201.652-8.588%206.606-9.552%208.992s-2.342%206.193-1.745%2010.873%202.664%209.221%205.878%2011.79%205.878%203.808%2010.103%204.312%203.444.229%206.062.229%205.006-2.202%204.914-4.909-2.296-5.001-4.501-4.863-3.077.505-5.281.229-7.715-2.064-7.899-9.451z%22%20fill%3D%22%23198754%22/%3E%3Ccircle%20cx%3D%22101.504%22%20cy%3D%2248.943%22%20r%3D%2214.208%22%20fill%3D%22none%22%20stroke%3D%22%23198754%22%20stroke-width%3D%229.354%22/%3E%3Cpath%20d%3D%22M87.81.002c-3.637.065-5.001.454-7.014%201.232s-3.443%201.363-6.3%204.282c-1.723%201.76-3.148%205.019-3.776%207.329-.413%201.521-.316%202.63-.316%202.63l-.195%2034.612c.065%205.774-6.755%208.305-9.612%208.37s-9.678-1.038-9.743-9.408%207.128-9.521%208.362-9.521c1.413-.13%202.526-.021%203.718-.016%202.071.009%204.157-.778%204.092-4.671s-4.157-4.736-4.157-4.736c-6.3-.843-11.43%202.206-11.43%202.206S40.917%2038.15%2041.372%2049.634%2051.568%2068.19%2061.311%2068.125s18.316-7.007%2018.445-17.193l.13-22.772c.046-2.291%202.683-3.644%204.476-4.203.745-.232%201.694-.274%201.694-.274l10.457-.13s4.871-.324%207.729-3.114%204.352-6.294%204.352-6.294.974-3.049.13-4.606-.195-1.233-2.792-3.309-8.573-4.477-8.573-4.477S91.447-.063%2087.81.002zM0%2047.169l.065%2028.417S0%2080.127%204.481%2079.997s5.072-3.866%205.049-4.152l-.113-28.482s1.624-7.656%209.937-7.721%2010.002%206.942%2010.002%208.499-.909%2010.51-9.093%2010.51c-.948%200-2.99-.567-4.145-.272-3.919%201-3.194%204.554-3.194%204.554s.065%205.061%207.404%204.996%2018.575-6.034%2018.575-19.074S26.953%2030.04%2019.549%2029.91%201.234%2035.296%200%2047.169z%22%20fill%3D%22%23198754%22/%3E%3Cg%20transform%3D%22matrix%28.325601%200%200%20.325256%20-10.32669%20-45.802786%29%22%3E%3Ccircle%20cx%3D%22297.554%22%20cy%3D%22172.286%22%20r%3D%2216.5%22%20fill%3D%22%23fff%22/%3E%3Cellipse%20cx%3D%22297.709%22%20cy%3D%22172.642%22%20rx%3D%2211.071%22%20ry%3D%2210.871%22%20fill%3D%22%23105a48%22/%3E%3Ccircle%20cx%3D%22304.104%22%20cy%3D%22167.667%22%20r%3D%224.5%22%20fill%3D%22%23fff%22/%3E%3C/g%3E%3Cpath%20d%3D%22M94.661%2017.032l.893-1.476s.99.714%201.916.925%201.575.114%202.955.114l14.565-.162c1.283-.032%203.085-.762%203.02-3.293s-.373-3.503-.373-3.503l1.283-.487s.52.503.877%201.573.309%201.995.292%202.66-.227%201.541-.227%201.541%201.564-.308%202.359-1.038.823-.779%201.489-1.508.812-.86.812-.86.552-.13.877.26.341.957.065%201.46-1.672%202.206-3.247%203.066-2.76%201.427-3.929%201.768-3.848.73-7.063.714l-10.944-.114s-2.143-.081-3.02-.373-2.241-.973-2.598-1.265z%22%20fill%3D%22%23d36d49%22/%3E%3Cg%20fill%3D%22%23105a48%22%3E%3Cellipse%20cx%3D%2293.052%22%20cy%3D%2243.567%22%20rx%3D%22.869%22%20ry%3D%221.014%22%20transform%3D%22rotate%28341.022%29%22/%3E%3Cellipse%20cx%3D%22104.3%22%20cy%3D%22-16.184%22%20rx%3D%22.865%22%20ry%3D%221.009%22%20transform%3D%22rotate%2814.786%29%22/%3E%3C/g%3E%3C/svg%3E"/>
+        </a>
+</div>
+    </nav>
+    <main class="pdoc">
+            <section class="module-info">
+                    <h1 class="modulename">
+ficharium    </h1>
+
+                        <div class="docstring"><p><img src="https://raw.githubusercontent.com/Biosensu/fichariumPy/main/fichariumPy.svg" alt="ficharium" /></p>
+
+<p>Cliente Python para a API <a href="https://ficharium.cloud">Ficharium Cloud</a>.</p>
+
+<p>Permite autenticar, listar projetos, modelos e fichas de campo,
+e acessar listas de espécies consolidadas.</p>
+
+<h2 id="inicio-rapido">Início rápido</h2>
+
+<div class="pdoc-code codehilite">
+<pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ficharium</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">ficharium_login</span><span class="p">(</span><span class="s2">&quot;seu@email.com&quot;</span><span class="p">)</span>
+<span class="n">projetos</span> <span class="o">=</span> <span class="n">listar_projetos</span><span class="p">()</span>
+</code></pre>
+</div>
+</div>
+
+                        <input id="mod-ficharium-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+
+                        <label class="view-source-button" for="mod-ficharium-view-source"><span>View Source</span></label>
+
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="sd">![ficharium](https://raw.githubusercontent.com/Biosensu/fichariumPy/main/fichariumPy.svg)</span>
+</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a>
+</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a><span class="sd">Cliente Python para a API [Ficharium Cloud](https://ficharium.cloud).</span>
+</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a>
+</span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a><span class="sd">Permite autenticar, listar projetos, modelos e fichas de campo,</span>
+</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a><span class="sd">e acessar listas de espécies consolidadas.</span>
+</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a>
+</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a><span class="sd">## Início rápido</span>
+</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a>
+</span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a><span class="sd">```python</span>
+</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a><span class="sd">from ficharium import *</span>
+</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a>
+</span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a><span class="sd">ficharium_login(&quot;seu@email.com&quot;)</span>
+</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a><span class="sd">projetos = listar_projetos()</span>
+</span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a><span class="sd">```</span>
+</span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a>
+</span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">._utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">FichariumError</span>
+</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.auth</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+</span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a>    <span class="n">ficharium_definir_token</span><span class="p">,</span>
+</span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a>    <span class="n">ficharium_login</span><span class="p">,</span>
+</span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a>    <span class="n">ficharium_logout</span><span class="p">,</span>
+</span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a>    <span class="n">ficharium_token</span><span class="p">,</span>
+</span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a><span class="p">)</span>
+</span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.especies</span><span class="w"> </span><span class="kn">import</span> <span class="n">listar_especies</span>
+</span><span id="L-27"><a href="#L-27"><span class="linenos">27</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.expandir</span><span class="w"> </span><span class="kn">import</span> <span class="n">expandir_coordenadas</span><span class="p">,</span> <span class="n">expandir_especies</span><span class="p">,</span> <span class="n">expandir_ponto</span>
+</span><span id="L-28"><a href="#L-28"><span class="linenos">28</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.fichas</span><span class="w"> </span><span class="kn">import</span> <span class="n">ficha</span><span class="p">,</span> <span class="n">listar_fichas</span>
+</span><span id="L-29"><a href="#L-29"><span class="linenos">29</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.modelos</span><span class="w"> </span><span class="kn">import</span> <span class="n">campos_modelo</span><span class="p">,</span> <span class="n">listar_modelos</span>
+</span><span id="L-30"><a href="#L-30"><span class="linenos">30</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.projetos</span><span class="w"> </span><span class="kn">import</span> <span class="n">fichas_projeto</span><span class="p">,</span> <span class="n">listar_projetos</span><span class="p">,</span> <span class="n">modelos_projeto</span><span class="p">,</span> <span class="n">projeto</span>
+</span><span id="L-31"><a href="#L-31"><span class="linenos">31</span></a>
+</span><span id="L-32"><a href="#L-32"><span class="linenos">32</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="L-33"><a href="#L-33"><span class="linenos">33</span></a>    <span class="s2">&quot;FichariumError&quot;</span><span class="p">,</span>
+</span><span id="L-34"><a href="#L-34"><span class="linenos">34</span></a>    <span class="s2">&quot;ficharium_token&quot;</span><span class="p">,</span>
+</span><span id="L-35"><a href="#L-35"><span class="linenos">35</span></a>    <span class="s2">&quot;ficharium_definir_token&quot;</span><span class="p">,</span>
+</span><span id="L-36"><a href="#L-36"><span class="linenos">36</span></a>    <span class="s2">&quot;ficharium_logout&quot;</span><span class="p">,</span>
+</span><span id="L-37"><a href="#L-37"><span class="linenos">37</span></a>    <span class="s2">&quot;ficharium_login&quot;</span><span class="p">,</span>
+</span><span id="L-38"><a href="#L-38"><span class="linenos">38</span></a>    <span class="s2">&quot;listar_projetos&quot;</span><span class="p">,</span>
+</span><span id="L-39"><a href="#L-39"><span class="linenos">39</span></a>    <span class="s2">&quot;projeto&quot;</span><span class="p">,</span>
+</span><span id="L-40"><a href="#L-40"><span class="linenos">40</span></a>    <span class="s2">&quot;modelos_projeto&quot;</span><span class="p">,</span>
+</span><span id="L-41"><a href="#L-41"><span class="linenos">41</span></a>    <span class="s2">&quot;fichas_projeto&quot;</span><span class="p">,</span>
+</span><span id="L-42"><a href="#L-42"><span class="linenos">42</span></a>    <span class="s2">&quot;listar_modelos&quot;</span><span class="p">,</span>
+</span><span id="L-43"><a href="#L-43"><span class="linenos">43</span></a>    <span class="s2">&quot;campos_modelo&quot;</span><span class="p">,</span>
+</span><span id="L-44"><a href="#L-44"><span class="linenos">44</span></a>    <span class="s2">&quot;listar_fichas&quot;</span><span class="p">,</span>
+</span><span id="L-45"><a href="#L-45"><span class="linenos">45</span></a>    <span class="s2">&quot;ficha&quot;</span><span class="p">,</span>
+</span><span id="L-46"><a href="#L-46"><span class="linenos">46</span></a>    <span class="s2">&quot;listar_especies&quot;</span><span class="p">,</span>
+</span><span id="L-47"><a href="#L-47"><span class="linenos">47</span></a>    <span class="s2">&quot;expandir_especies&quot;</span><span class="p">,</span>
+</span><span id="L-48"><a href="#L-48"><span class="linenos">48</span></a>    <span class="s2">&quot;expandir_coordenadas&quot;</span><span class="p">,</span>
+</span><span id="L-49"><a href="#L-49"><span class="linenos">49</span></a>    <span class="s2">&quot;expandir_ponto&quot;</span><span class="p">,</span>
+</span><span id="L-50"><a href="#L-50"><span class="linenos">50</span></a><span class="p">]</span>
+</span></pre></div>
+
+
+            </section>
+                <section id="FichariumError">
+                            <input id="FichariumError-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">FichariumError</span><wbr>(<span class="base">builtins.Exception</span>):
+
+                <label class="view-source-button" for="FichariumError-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#FichariumError"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="FichariumError-12"><a href="#FichariumError-12"><span class="linenos">12</span></a><span class="k">class</span><span class="w"> </span><span class="nc">FichariumError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+</span><span id="FichariumError-13"><a href="#FichariumError-13"><span class="linenos">13</span></a>    <span class="k">pass</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Common base class for all non-exit exceptions.</p>
+</div>
+
+
+                </section>
+                <section id="ficharium_token">
+                            <input id="ficharium_token-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">ficharium_token</span><span class="signature pdoc-code condensed">(<span class="return-annotation">) -> <span class="nb">str</span>:</span></span>
+
+                <label class="view-source-button" for="ficharium_token-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#ficharium_token"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="ficharium_token-17"><a href="#ficharium_token-17"><span class="linenos">17</span></a><span class="k">def</span><span class="w"> </span><span class="nf">ficharium_token</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="ficharium_token-18"><a href="#ficharium_token-18"><span class="linenos">18</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Obtém o token JWT armazenado.</span>
+</span><span id="ficharium_token-19"><a href="#ficharium_token-19"><span class="linenos">19</span></a>
+</span><span id="ficharium_token-20"><a href="#ficharium_token-20"><span class="linenos">20</span></a><span class="sd">    Procura primeiro na variável de ambiente `FICHARIUM_TOKEN`,</span>
+</span><span id="ficharium_token-21"><a href="#ficharium_token-21"><span class="linenos">21</span></a><span class="sd">    depois no arquivo `~/.ficharium_token`.</span>
+</span><span id="ficharium_token-22"><a href="#ficharium_token-22"><span class="linenos">22</span></a>
+</span><span id="ficharium_token-23"><a href="#ficharium_token-23"><span class="linenos">23</span></a><span class="sd">    Raises:</span>
+</span><span id="ficharium_token-24"><a href="#ficharium_token-24"><span class="linenos">24</span></a><span class="sd">        FichariumError: Se nenhum token for encontrado.</span>
+</span><span id="ficharium_token-25"><a href="#ficharium_token-25"><span class="linenos">25</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="ficharium_token-26"><a href="#ficharium_token-26"><span class="linenos">26</span></a>    <span class="n">token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;FICHARIUM_TOKEN&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><span id="ficharium_token-27"><a href="#ficharium_token-27"><span class="linenos">27</span></a>    <span class="k">if</span> <span class="n">token</span><span class="p">:</span>
+</span><span id="ficharium_token-28"><a href="#ficharium_token-28"><span class="linenos">28</span></a>        <span class="k">return</span> <span class="n">token</span>
+</span><span id="ficharium_token-29"><a href="#ficharium_token-29"><span class="linenos">29</span></a>    <span class="k">if</span> <span class="n">_TOKEN_FILE</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+</span><span id="ficharium_token-30"><a href="#ficharium_token-30"><span class="linenos">30</span></a>        <span class="n">token</span> <span class="o">=</span> <span class="n">_TOKEN_FILE</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span><span id="ficharium_token-31"><a href="#ficharium_token-31"><span class="linenos">31</span></a>        <span class="k">if</span> <span class="n">token</span><span class="p">:</span>
+</span><span id="ficharium_token-32"><a href="#ficharium_token-32"><span class="linenos">32</span></a>            <span class="k">return</span> <span class="n">token</span>
+</span><span id="ficharium_token-33"><a href="#ficharium_token-33"><span class="linenos">33</span></a>    <span class="k">raise</span> <span class="n">FichariumError</span><span class="p">(</span>
+</span><span id="ficharium_token-34"><a href="#ficharium_token-34"><span class="linenos">34</span></a>        <span class="s2">&quot;Token nao encontrado. Use ficharium_login() ou defina FICHARIUM_TOKEN.&quot;</span>
+</span><span id="ficharium_token-35"><a href="#ficharium_token-35"><span class="linenos">35</span></a>    <span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Obtém o token JWT armazenado.</p>
+
+<p>Procura primeiro na variável de ambiente <code>FICHARIUM_TOKEN</code>,
+depois no arquivo <code>~/.ficharium_token</code>.</p>
+
+<p>Raises:
+    FichariumError: Se nenhum token for encontrado.</p>
+</div>
+
+
+                </section>
+                <section id="ficharium_definir_token">
+                            <input id="ficharium_definir_token-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">ficharium_definir_token</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">token</span><span class="p">:</span> <span class="nb">str</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+
+                <label class="view-source-button" for="ficharium_definir_token-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#ficharium_definir_token"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="ficharium_definir_token-38"><a href="#ficharium_definir_token-38"><span class="linenos">38</span></a><span class="k">def</span><span class="w"> </span><span class="nf">ficharium_definir_token</span><span class="p">(</span><span class="n">token</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="ficharium_definir_token-39"><a href="#ficharium_definir_token-39"><span class="linenos">39</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Salva o token JWT na variável de ambiente e em `~/.ficharium_token`.&quot;&quot;&quot;</span>
+</span><span id="ficharium_definir_token-40"><a href="#ficharium_definir_token-40"><span class="linenos">40</span></a>    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;FICHARIUM_TOKEN&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">token</span>
+</span><span id="ficharium_definir_token-41"><a href="#ficharium_definir_token-41"><span class="linenos">41</span></a>    <span class="n">_TOKEN_FILE</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Salva o token JWT na variável de ambiente e em <code>~/.ficharium_token</code>.</p>
+</div>
+
+
+                </section>
+                <section id="ficharium_logout">
+                            <input id="ficharium_logout-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">ficharium_logout</span><span class="signature pdoc-code condensed">(<span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+
+                <label class="view-source-button" for="ficharium_logout-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#ficharium_logout"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="ficharium_logout-44"><a href="#ficharium_logout-44"><span class="linenos">44</span></a><span class="k">def</span><span class="w"> </span><span class="nf">ficharium_logout</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="ficharium_logout-45"><a href="#ficharium_logout-45"><span class="linenos">45</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Remove o token da sessão atual e apaga `~/.ficharium_token`.&quot;&quot;&quot;</span>
+</span><span id="ficharium_logout-46"><a href="#ficharium_logout-46"><span class="linenos">46</span></a>    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;FICHARIUM_TOKEN&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="ficharium_logout-47"><a href="#ficharium_logout-47"><span class="linenos">47</span></a>    <span class="k">if</span> <span class="n">_TOKEN_FILE</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+</span><span id="ficharium_logout-48"><a href="#ficharium_logout-48"><span class="linenos">48</span></a>        <span class="n">_TOKEN_FILE</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
+</span><span id="ficharium_logout-49"><a href="#ficharium_logout-49"><span class="linenos">49</span></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Logout realizado com sucesso.&quot;</span><span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Remove o token da sessão atual e apaga <code>~/.ficharium_token</code>.</p>
+</div>
+
+
+                </section>
+                <section id="ficharium_login">
+                            <input id="ficharium_login-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">ficharium_login</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">email</span><span class="p">:</span> <span class="nb">str</span>, </span><span class="param"><span class="n">senha</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>, </span><span class="param"><span class="n">base_url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="nb">str</span>:</span></span>
+
+                <label class="view-source-button" for="ficharium_login-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#ficharium_login"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="ficharium_login-52"><a href="#ficharium_login-52"><span class="linenos">52</span></a><span class="k">def</span><span class="w"> </span><span class="nf">ficharium_login</span><span class="p">(</span>
+</span><span id="ficharium_login-53"><a href="#ficharium_login-53"><span class="linenos">53</span></a>    <span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="ficharium_login-54"><a href="#ficharium_login-54"><span class="linenos">54</span></a>    <span class="n">senha</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="ficharium_login-55"><a href="#ficharium_login-55"><span class="linenos">55</span></a>    <span class="n">base_url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="ficharium_login-56"><a href="#ficharium_login-56"><span class="linenos">56</span></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="ficharium_login-57"><a href="#ficharium_login-57"><span class="linenos">57</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Autentica com email e senha e armazena o token automaticamente.</span>
+</span><span id="ficharium_login-58"><a href="#ficharium_login-58"><span class="linenos">58</span></a>
+</span><span id="ficharium_login-59"><a href="#ficharium_login-59"><span class="linenos">59</span></a><span class="sd">    Args:</span>
+</span><span id="ficharium_login-60"><a href="#ficharium_login-60"><span class="linenos">60</span></a><span class="sd">        email: Email do usuário.</span>
+</span><span id="ficharium_login-61"><a href="#ficharium_login-61"><span class="linenos">61</span></a><span class="sd">        senha: Senha. Se omitida, um prompt seguro é exibido.</span>
+</span><span id="ficharium_login-62"><a href="#ficharium_login-62"><span class="linenos">62</span></a><span class="sd">        base_url: URL base da API (padrão: `https://api.ficharium.cloud`).</span>
+</span><span id="ficharium_login-63"><a href="#ficharium_login-63"><span class="linenos">63</span></a>
+</span><span id="ficharium_login-64"><a href="#ficharium_login-64"><span class="linenos">64</span></a><span class="sd">    Returns:</span>
+</span><span id="ficharium_login-65"><a href="#ficharium_login-65"><span class="linenos">65</span></a><span class="sd">        Mensagem de boas-vindas.</span>
+</span><span id="ficharium_login-66"><a href="#ficharium_login-66"><span class="linenos">66</span></a>
+</span><span id="ficharium_login-67"><a href="#ficharium_login-67"><span class="linenos">67</span></a><span class="sd">    Raises:</span>
+</span><span id="ficharium_login-68"><a href="#ficharium_login-68"><span class="linenos">68</span></a><span class="sd">        FichariumError: Se as credenciais forem inválidas.</span>
+</span><span id="ficharium_login-69"><a href="#ficharium_login-69"><span class="linenos">69</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="ficharium_login-70"><a href="#ficharium_login-70"><span class="linenos">70</span></a>    <span class="k">if</span> <span class="n">senha</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="ficharium_login-71"><a href="#ficharium_login-71"><span class="linenos">71</span></a>        <span class="n">senha</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getpass</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Senha Ficharium para </span><span class="si">{</span><span class="n">email</span><span class="si">}</span><span class="s2">: &quot;</span><span class="p">)</span>
+</span><span id="ficharium_login-72"><a href="#ficharium_login-72"><span class="linenos">72</span></a>
+</span><span id="ficharium_login-73"><a href="#ficharium_login-73"><span class="linenos">73</span></a>    <span class="k">if</span> <span class="n">base_url</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="ficharium_login-74"><a href="#ficharium_login-74"><span class="linenos">74</span></a>        <span class="n">base_url</span> <span class="o">=</span> <span class="n">ficharium_base_url</span><span class="p">()</span>
+</span><span id="ficharium_login-75"><a href="#ficharium_login-75"><span class="linenos">75</span></a>
+</span><span id="ficharium_login-76"><a href="#ficharium_login-76"><span class="linenos">76</span></a>    <span class="n">resp</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+</span><span id="ficharium_login-77"><a href="#ficharium_login-77"><span class="linenos">77</span></a>        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/usuario/login&quot;</span><span class="p">,</span>
+</span><span id="ficharium_login-78"><a href="#ficharium_login-78"><span class="linenos">78</span></a>        <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="n">email</span><span class="p">,</span> <span class="s2">&quot;senha&quot;</span><span class="p">:</span> <span class="n">senha</span><span class="p">},</span>
+</span><span id="ficharium_login-79"><a href="#ficharium_login-79"><span class="linenos">79</span></a>        <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;User-Agent&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;ficharium-py/</span><span class="si">{</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span>
+</span><span id="ficharium_login-80"><a href="#ficharium_login-80"><span class="linenos">80</span></a>    <span class="p">)</span>
+</span><span id="ficharium_login-81"><a href="#ficharium_login-81"><span class="linenos">81</span></a>
+</span><span id="ficharium_login-82"><a href="#ficharium_login-82"><span class="linenos">82</span></a>    <span class="k">if</span> <span class="n">resp</span><span class="o">.</span><span class="n">status_code</span> <span class="o">&gt;=</span> <span class="mi">400</span><span class="p">:</span>
+</span><span id="ficharium_login-83"><a href="#ficharium_login-83"><span class="linenos">83</span></a>        <span class="k">try</span><span class="p">:</span>
+</span><span id="ficharium_login-84"><a href="#ficharium_login-84"><span class="linenos">84</span></a>            <span class="n">msg</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;message&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Erro HTTP </span><span class="si">{</span><span class="n">resp</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="ficharium_login-85"><a href="#ficharium_login-85"><span class="linenos">85</span></a>        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+</span><span id="ficharium_login-86"><a href="#ficharium_login-86"><span class="linenos">86</span></a>            <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Erro HTTP </span><span class="si">{</span><span class="n">resp</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="ficharium_login-87"><a href="#ficharium_login-87"><span class="linenos">87</span></a>        <span class="k">raise</span> <span class="n">FichariumError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</span><span id="ficharium_login-88"><a href="#ficharium_login-88"><span class="linenos">88</span></a>
+</span><span id="ficharium_login-89"><a href="#ficharium_login-89"><span class="linenos">89</span></a>    <span class="n">res</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</span><span id="ficharium_login-90"><a href="#ficharium_login-90"><span class="linenos">90</span></a>    <span class="n">ficharium_definir_token</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;token&quot;</span><span class="p">])</span>
+</span><span id="ficharium_login-91"><a href="#ficharium_login-91"><span class="linenos">91</span></a>    <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Login realizado com sucesso. Bem-vindo, </span><span class="si">{</span><span class="n">res</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;nome&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">!&quot;</span>
+</span><span id="ficharium_login-92"><a href="#ficharium_login-92"><span class="linenos">92</span></a>    <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</span><span id="ficharium_login-93"><a href="#ficharium_login-93"><span class="linenos">93</span></a>    <span class="k">return</span> <span class="n">msg</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Autentica com email e senha e armazena o token automaticamente.</p>
+
+<p>Args:
+    email: Email do usuário.
+    senha: Senha. Se omitida, um prompt seguro é exibido.
+    base_url: URL base da API (padrão: <code>https://api.ficharium.cloud</code>).</p>
+
+<p>Returns:
+    Mensagem de boas-vindas.</p>
+
+<p>Raises:
+    FichariumError: Se as credenciais forem inválidas.</p>
+</div>
+
+
+                </section>
+                <section id="listar_projetos">
+                            <input id="listar_projetos-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">listar_projetos</span><span class="signature pdoc-code condensed">(<span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span>:</span></span>
+
+                <label class="view-source-button" for="listar_projetos-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#listar_projetos"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="listar_projetos-11"><a href="#listar_projetos-11"><span class="linenos">11</span></a><span class="k">def</span><span class="w"> </span><span class="nf">listar_projetos</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+</span><span id="listar_projetos-12"><a href="#listar_projetos-12"><span class="linenos">12</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Retorna todos os projetos do usuário autenticado.</span>
+</span><span id="listar_projetos-13"><a href="#listar_projetos-13"><span class="linenos">13</span></a>
+</span><span id="listar_projetos-14"><a href="#listar_projetos-14"><span class="linenos">14</span></a><span class="sd">    Returns:</span>
+</span><span id="listar_projetos-15"><a href="#listar_projetos-15"><span class="linenos">15</span></a><span class="sd">        DataFrame com colunas `id`, `nome`, `descricao`, `fichas_na_nuvem`, `cargo`.</span>
+</span><span id="listar_projetos-16"><a href="#listar_projetos-16"><span class="linenos">16</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="listar_projetos-17"><a href="#listar_projetos-17"><span class="linenos">17</span></a>    <span class="n">res</span> <span class="o">=</span> <span class="n">_ficharium_erro</span><span class="p">(</span>
+</span><span id="listar_projetos-18"><a href="#listar_projetos-18"><span class="linenos">18</span></a>        <span class="k">lambda</span><span class="p">:</span> <span class="n">_ficharium_requisicao</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;projetos&quot;</span><span class="p">),</span>
+</span><span id="listar_projetos-19"><a href="#listar_projetos-19"><span class="linenos">19</span></a>        <span class="s2">&quot;Erro ao listar projetos&quot;</span><span class="p">,</span>
+</span><span id="listar_projetos-20"><a href="#listar_projetos-20"><span class="linenos">20</span></a>    <span class="p">)</span>
+</span><span id="listar_projetos-21"><a href="#listar_projetos-21"><span class="linenos">21</span></a>    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+</span><span id="listar_projetos-22"><a href="#listar_projetos-22"><span class="linenos">22</span></a>        <span class="p">{</span>
+</span><span id="listar_projetos-23"><a href="#listar_projetos-23"><span class="linenos">23</span></a>            <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">],</span>
+</span><span id="listar_projetos-24"><a href="#listar_projetos-24"><span class="linenos">24</span></a>            <span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nome&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">],</span>
+</span><span id="listar_projetos-25"><a href="#listar_projetos-25"><span class="linenos">25</span></a>            <span class="s2">&quot;descricao&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;descricao&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">],</span>
+</span><span id="listar_projetos-26"><a href="#listar_projetos-26"><span class="linenos">26</span></a>            <span class="s2">&quot;fichas_na_nuvem&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fichas_na_nuvem&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">],</span>
+</span><span id="listar_projetos-27"><a href="#listar_projetos-27"><span class="linenos">27</span></a>            <span class="s2">&quot;cargo&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;cargo&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">],</span>
+</span><span id="listar_projetos-28"><a href="#listar_projetos-28"><span class="linenos">28</span></a>        <span class="p">}</span>
+</span><span id="listar_projetos-29"><a href="#listar_projetos-29"><span class="linenos">29</span></a>    <span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Retorna todos os projetos do usuário autenticado.</p>
+
+<p>Returns:
+    DataFrame com colunas <code>id</code>, <code>nome</code>, <code>descricao</code>, <code>fichas_na_nuvem</code>, <code>cargo</code>.</p>
+</div>
+
+
+                </section>
+                <section id="projeto">
+                            <input id="projeto-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">projeto</span><span class="signature pdoc-code condensed">(<span class="param"><span class="nb">id</span><span class="p">:</span> <span class="nb">str</span></span><span class="return-annotation">) -> <span class="nb">dict</span>:</span></span>
+
+                <label class="view-source-button" for="projeto-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#projeto"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="projeto-32"><a href="#projeto-32"><span class="linenos">32</span></a><span class="k">def</span><span class="w"> </span><span class="nf">projeto</span><span class="p">(</span><span class="nb">id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="projeto-33"><a href="#projeto-33"><span class="linenos">33</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Retorna os detalhes completos de um projeto pelo seu ID.&quot;&quot;&quot;</span>
+</span><span id="projeto-34"><a href="#projeto-34"><span class="linenos">34</span></a>    <span class="k">return</span> <span class="n">_ficharium_erro</span><span class="p">(</span>
+</span><span id="projeto-35"><a href="#projeto-35"><span class="linenos">35</span></a>        <span class="k">lambda</span><span class="p">:</span> <span class="n">_ficharium_requisicao</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;projetos/</span><span class="si">{</span><span class="nb">id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
+</span><span id="projeto-36"><a href="#projeto-36"><span class="linenos">36</span></a>        <span class="sa">f</span><span class="s2">&quot;Projeto &#39;</span><span class="si">{</span><span class="nb">id</span><span class="si">}</span><span class="s2">&#39; nao encontrado&quot;</span><span class="p">,</span>
+</span><span id="projeto-37"><a href="#projeto-37"><span class="linenos">37</span></a>    <span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Retorna os detalhes completos de um projeto pelo seu ID.</p>
+</div>
+
+
+                </section>
+                <section id="modelos_projeto">
+                            <input id="modelos_projeto-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">modelos_projeto</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">projeto_id</span><span class="p">:</span> <span class="nb">str</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span>:</span></span>
+
+                <label class="view-source-button" for="modelos_projeto-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#modelos_projeto"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="modelos_projeto-40"><a href="#modelos_projeto-40"><span class="linenos">40</span></a><span class="k">def</span><span class="w"> </span><span class="nf">modelos_projeto</span><span class="p">(</span><span class="n">projeto_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+</span><span id="modelos_projeto-41"><a href="#modelos_projeto-41"><span class="linenos">41</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Retorna os modelos associados a um projeto.</span>
+</span><span id="modelos_projeto-42"><a href="#modelos_projeto-42"><span class="linenos">42</span></a>
+</span><span id="modelos_projeto-43"><a href="#modelos_projeto-43"><span class="linenos">43</span></a><span class="sd">    Returns:</span>
+</span><span id="modelos_projeto-44"><a href="#modelos_projeto-44"><span class="linenos">44</span></a><span class="sd">        DataFrame com colunas `id`, `nome`, `descricao`, `grupo`.</span>
+</span><span id="modelos_projeto-45"><a href="#modelos_projeto-45"><span class="linenos">45</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="modelos_projeto-46"><a href="#modelos_projeto-46"><span class="linenos">46</span></a>    <span class="n">res</span> <span class="o">=</span> <span class="n">_ficharium_erro</span><span class="p">(</span>
+</span><span id="modelos_projeto-47"><a href="#modelos_projeto-47"><span class="linenos">47</span></a>        <span class="k">lambda</span><span class="p">:</span> <span class="n">_ficharium_requisicao</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;projetos/</span><span class="si">{</span><span class="n">projeto_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
+</span><span id="modelos_projeto-48"><a href="#modelos_projeto-48"><span class="linenos">48</span></a>        <span class="sa">f</span><span class="s2">&quot;Projeto &#39;</span><span class="si">{</span><span class="n">projeto_id</span><span class="si">}</span><span class="s2">&#39; nao encontrado&quot;</span><span class="p">,</span>
+</span><span id="modelos_projeto-49"><a href="#modelos_projeto-49"><span class="linenos">49</span></a>    <span class="p">)</span>
+</span><span id="modelos_projeto-50"><a href="#modelos_projeto-50"><span class="linenos">50</span></a>    <span class="n">modelos</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;modelos_usuario_do_projeto&quot;</span><span class="p">,</span> <span class="p">[])</span> <span class="ow">or</span> <span class="p">[]</span>
+</span><span id="modelos_projeto-51"><a href="#modelos_projeto-51"><span class="linenos">51</span></a>    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+</span><span id="modelos_projeto-52"><a href="#modelos_projeto-52"><span class="linenos">52</span></a>        <span class="p">{</span>
+</span><span id="modelos_projeto-53"><a href="#modelos_projeto-53"><span class="linenos">53</span></a>            <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">modelos</span><span class="p">],</span>
+</span><span id="modelos_projeto-54"><a href="#modelos_projeto-54"><span class="linenos">54</span></a>            <span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nome&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">modelos</span><span class="p">],</span>
+</span><span id="modelos_projeto-55"><a href="#modelos_projeto-55"><span class="linenos">55</span></a>            <span class="s2">&quot;descricao&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;descricao&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">modelos</span><span class="p">],</span>
+</span><span id="modelos_projeto-56"><a href="#modelos_projeto-56"><span class="linenos">56</span></a>            <span class="s2">&quot;grupo&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;grupo&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">modelos</span><span class="p">],</span>
+</span><span id="modelos_projeto-57"><a href="#modelos_projeto-57"><span class="linenos">57</span></a>        <span class="p">}</span>
+</span><span id="modelos_projeto-58"><a href="#modelos_projeto-58"><span class="linenos">58</span></a>    <span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Retorna os modelos associados a um projeto.</p>
+
+<p>Returns:
+    DataFrame com colunas <code>id</code>, <code>nome</code>, <code>descricao</code>, <code>grupo</code>.</p>
+</div>
+
+
+                </section>
+                <section id="fichas_projeto">
+                            <input id="fichas_projeto-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">fichas_projeto</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">projeto_id</span><span class="p">:</span> <span class="nb">str</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span>:</span></span>
+
+                <label class="view-source-button" for="fichas_projeto-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#fichas_projeto"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="fichas_projeto-61"><a href="#fichas_projeto-61"><span class="linenos">61</span></a><span class="k">def</span><span class="w"> </span><span class="nf">fichas_projeto</span><span class="p">(</span><span class="n">projeto_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+</span><span id="fichas_projeto-62"><a href="#fichas_projeto-62"><span class="linenos">62</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Retorna todas as fichas de um projeto com metadados básicos.</span>
+</span><span id="fichas_projeto-63"><a href="#fichas_projeto-63"><span class="linenos">63</span></a>
+</span><span id="fichas_projeto-64"><a href="#fichas_projeto-64"><span class="linenos">64</span></a><span class="sd">    Não inclui os dados de cada observação — use `listar_fichas()` para isso.</span>
+</span><span id="fichas_projeto-65"><a href="#fichas_projeto-65"><span class="linenos">65</span></a>
+</span><span id="fichas_projeto-66"><a href="#fichas_projeto-66"><span class="linenos">66</span></a><span class="sd">    Returns:</span>
+</span><span id="fichas_projeto-67"><a href="#fichas_projeto-67"><span class="linenos">67</span></a><span class="sd">        DataFrame com colunas `id`, `modelo_id`, `modelo_nome`,</span>
+</span><span id="fichas_projeto-68"><a href="#fichas_projeto-68"><span class="linenos">68</span></a><span class="sd">        `criador_nome`, `created`, `updated`.</span>
+</span><span id="fichas_projeto-69"><a href="#fichas_projeto-69"><span class="linenos">69</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="fichas_projeto-70"><a href="#fichas_projeto-70"><span class="linenos">70</span></a>    <span class="n">res</span> <span class="o">=</span> <span class="n">_ficharium_erro</span><span class="p">(</span>
+</span><span id="fichas_projeto-71"><a href="#fichas_projeto-71"><span class="linenos">71</span></a>        <span class="k">lambda</span><span class="p">:</span> <span class="n">_ficharium_requisicao</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;fichas/</span><span class="si">{</span><span class="n">projeto_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
+</span><span id="fichas_projeto-72"><a href="#fichas_projeto-72"><span class="linenos">72</span></a>        <span class="sa">f</span><span class="s2">&quot;Erro ao listar fichas do projeto &#39;</span><span class="si">{</span><span class="n">projeto_id</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">,</span>
+</span><span id="fichas_projeto-73"><a href="#fichas_projeto-73"><span class="linenos">73</span></a>    <span class="p">)</span>
+</span><span id="fichas_projeto-74"><a href="#fichas_projeto-74"><span class="linenos">74</span></a>    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+</span><span id="fichas_projeto-75"><a href="#fichas_projeto-75"><span class="linenos">75</span></a>        <span class="p">{</span>
+</span><span id="fichas_projeto-76"><a href="#fichas_projeto-76"><span class="linenos">76</span></a>            <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">],</span>
+</span><span id="fichas_projeto-77"><a href="#fichas_projeto-77"><span class="linenos">77</span></a>            <span class="s2">&quot;modelo_id&quot;</span><span class="p">:</span> <span class="p">[</span>
+</span><span id="fichas_projeto-78"><a href="#fichas_projeto-78"><span class="linenos">78</span></a>                <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;modelo&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span>
+</span><span id="fichas_projeto-79"><a href="#fichas_projeto-79"><span class="linenos">79</span></a>            <span class="p">],</span>
+</span><span id="fichas_projeto-80"><a href="#fichas_projeto-80"><span class="linenos">80</span></a>            <span class="s2">&quot;modelo_nome&quot;</span><span class="p">:</span> <span class="p">[</span>
+</span><span id="fichas_projeto-81"><a href="#fichas_projeto-81"><span class="linenos">81</span></a>                <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;modelo&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nome&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;modelo_bs&quot;</span><span class="p">)</span>
+</span><span id="fichas_projeto-82"><a href="#fichas_projeto-82"><span class="linenos">82</span></a>                <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span>
+</span><span id="fichas_projeto-83"><a href="#fichas_projeto-83"><span class="linenos">83</span></a>            <span class="p">],</span>
+</span><span id="fichas_projeto-84"><a href="#fichas_projeto-84"><span class="linenos">84</span></a>            <span class="s2">&quot;criador_nome&quot;</span><span class="p">:</span> <span class="p">[</span>
+</span><span id="fichas_projeto-85"><a href="#fichas_projeto-85"><span class="linenos">85</span></a>                <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;criador&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nome&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span>
+</span><span id="fichas_projeto-86"><a href="#fichas_projeto-86"><span class="linenos">86</span></a>            <span class="p">],</span>
+</span><span id="fichas_projeto-87"><a href="#fichas_projeto-87"><span class="linenos">87</span></a>            <span class="s2">&quot;created&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;created&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">],</span>
+</span><span id="fichas_projeto-88"><a href="#fichas_projeto-88"><span class="linenos">88</span></a>            <span class="s2">&quot;updated&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;updated&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">],</span>
+</span><span id="fichas_projeto-89"><a href="#fichas_projeto-89"><span class="linenos">89</span></a>        <span class="p">}</span>
+</span><span id="fichas_projeto-90"><a href="#fichas_projeto-90"><span class="linenos">90</span></a>    <span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Retorna todas as fichas de um projeto com metadados básicos.</p>
+
+<p>Não inclui os dados de cada observação — use <code><a href="#listar_fichas">listar_fichas()</a></code> para isso.</p>
+
+<p>Returns:
+    DataFrame com colunas <code>id</code>, <code>modelo_id</code>, <code>modelo_nome</code>,
+    <code>criador_nome</code>, <code>created</code>, <code>updated</code>.</p>
+</div>
+
+
+                </section>
+                <section id="listar_modelos">
+                            <input id="listar_modelos-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">listar_modelos</span><span class="signature pdoc-code condensed">(<span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span>:</span></span>
+
+                <label class="view-source-button" for="listar_modelos-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#listar_modelos"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="listar_modelos-11"><a href="#listar_modelos-11"><span class="linenos">11</span></a><span class="k">def</span><span class="w"> </span><span class="nf">listar_modelos</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+</span><span id="listar_modelos-12"><a href="#listar_modelos-12"><span class="linenos">12</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Retorna todos os modelos de ficha do usuário autenticado.</span>
+</span><span id="listar_modelos-13"><a href="#listar_modelos-13"><span class="linenos">13</span></a>
+</span><span id="listar_modelos-14"><a href="#listar_modelos-14"><span class="linenos">14</span></a><span class="sd">    Returns:</span>
+</span><span id="listar_modelos-15"><a href="#listar_modelos-15"><span class="linenos">15</span></a><span class="sd">        DataFrame com colunas `id`, `nome`, `descricao`, `grupo`, `created`.</span>
+</span><span id="listar_modelos-16"><a href="#listar_modelos-16"><span class="linenos">16</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="listar_modelos-17"><a href="#listar_modelos-17"><span class="linenos">17</span></a>    <span class="n">res</span> <span class="o">=</span> <span class="n">_ficharium_erro</span><span class="p">(</span>
+</span><span id="listar_modelos-18"><a href="#listar_modelos-18"><span class="linenos">18</span></a>        <span class="k">lambda</span><span class="p">:</span> <span class="n">_ficharium_requisicao</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;modelos&quot;</span><span class="p">),</span>
+</span><span id="listar_modelos-19"><a href="#listar_modelos-19"><span class="linenos">19</span></a>        <span class="s2">&quot;Erro ao listar modelos&quot;</span><span class="p">,</span>
+</span><span id="listar_modelos-20"><a href="#listar_modelos-20"><span class="linenos">20</span></a>    <span class="p">)</span>
+</span><span id="listar_modelos-21"><a href="#listar_modelos-21"><span class="linenos">21</span></a>    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+</span><span id="listar_modelos-22"><a href="#listar_modelos-22"><span class="linenos">22</span></a>        <span class="p">{</span>
+</span><span id="listar_modelos-23"><a href="#listar_modelos-23"><span class="linenos">23</span></a>            <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">],</span>
+</span><span id="listar_modelos-24"><a href="#listar_modelos-24"><span class="linenos">24</span></a>            <span class="s2">&quot;nome&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nome&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">],</span>
+</span><span id="listar_modelos-25"><a href="#listar_modelos-25"><span class="linenos">25</span></a>            <span class="s2">&quot;descricao&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;descricao&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">],</span>
+</span><span id="listar_modelos-26"><a href="#listar_modelos-26"><span class="linenos">26</span></a>            <span class="s2">&quot;grupo&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;grupo&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">],</span>
+</span><span id="listar_modelos-27"><a href="#listar_modelos-27"><span class="linenos">27</span></a>            <span class="s2">&quot;created&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;created&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">],</span>
+</span><span id="listar_modelos-28"><a href="#listar_modelos-28"><span class="linenos">28</span></a>        <span class="p">}</span>
+</span><span id="listar_modelos-29"><a href="#listar_modelos-29"><span class="linenos">29</span></a>    <span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Retorna todos os modelos de ficha do usuário autenticado.</p>
+
+<p>Returns:
+    DataFrame com colunas <code>id</code>, <code>nome</code>, <code>descricao</code>, <code>grupo</code>, <code>created</code>.</p>
+</div>
+
+
+                </section>
+                <section id="campos_modelo">
+                            <input id="campos_modelo-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">campos_modelo</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">modelo_id</span><span class="p">:</span> <span class="nb">str</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span>:</span></span>
+
+                <label class="view-source-button" for="campos_modelo-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#campos_modelo"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="campos_modelo-32"><a href="#campos_modelo-32"><span class="linenos">32</span></a><span class="k">def</span><span class="w"> </span><span class="nf">campos_modelo</span><span class="p">(</span><span class="n">modelo_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+</span><span id="campos_modelo-33"><a href="#campos_modelo-33"><span class="linenos">33</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Retorna os campos de um modelo, consolidando metadados e campos principais.</span>
+</span><span id="campos_modelo-34"><a href="#campos_modelo-34"><span class="linenos">34</span></a>
+</span><span id="campos_modelo-35"><a href="#campos_modelo-35"><span class="linenos">35</span></a><span class="sd">    Returns:</span>
+</span><span id="campos_modelo-36"><a href="#campos_modelo-36"><span class="linenos">36</span></a><span class="sd">        DataFrame com colunas `field_id`, `label`, `widget`, `tipo`, `py_tipo`, `secao`.</span>
+</span><span id="campos_modelo-37"><a href="#campos_modelo-37"><span class="linenos">37</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="campos_modelo-38"><a href="#campos_modelo-38"><span class="linenos">38</span></a>    <span class="n">res</span> <span class="o">=</span> <span class="n">_ficharium_erro</span><span class="p">(</span>
+</span><span id="campos_modelo-39"><a href="#campos_modelo-39"><span class="linenos">39</span></a>        <span class="k">lambda</span><span class="p">:</span> <span class="n">_ficharium_requisicao</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;modelos/</span><span class="si">{</span><span class="n">modelo_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
+</span><span id="campos_modelo-40"><a href="#campos_modelo-40"><span class="linenos">40</span></a>        <span class="sa">f</span><span class="s2">&quot;Modelo &#39;</span><span class="si">{</span><span class="n">modelo_id</span><span class="si">}</span><span class="s2">&#39; nao encontrado&quot;</span><span class="p">,</span>
+</span><span id="campos_modelo-41"><a href="#campos_modelo-41"><span class="linenos">41</span></a>    <span class="p">)</span>
+</span><span id="campos_modelo-42"><a href="#campos_modelo-42"><span class="linenos">42</span></a>
+</span><span id="campos_modelo-43"><a href="#campos_modelo-43"><span class="linenos">43</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">extrair_campos</span><span class="p">(</span><span class="n">lista</span><span class="p">,</span> <span class="n">secao</span><span class="p">):</span>
+</span><span id="campos_modelo-44"><a href="#campos_modelo-44"><span class="linenos">44</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">lista</span><span class="p">:</span>
+</span><span id="campos_modelo-45"><a href="#campos_modelo-45"><span class="linenos">45</span></a>            <span class="k">return</span> <span class="p">[]</span>
+</span><span id="campos_modelo-46"><a href="#campos_modelo-46"><span class="linenos">46</span></a>        <span class="n">campos</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="campos_modelo-47"><a href="#campos_modelo-47"><span class="linenos">47</span></a>        <span class="k">for</span> <span class="n">campo</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">:</span>
+</span><span id="campos_modelo-48"><a href="#campos_modelo-48"><span class="linenos">48</span></a>            <span class="n">tipo</span> <span class="o">=</span> <span class="n">campo</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;tipo&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><span id="campos_modelo-49"><a href="#campos_modelo-49"><span class="linenos">49</span></a>            <span class="n">campos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+</span><span id="campos_modelo-50"><a href="#campos_modelo-50"><span class="linenos">50</span></a>                <span class="p">{</span>
+</span><span id="campos_modelo-51"><a href="#campos_modelo-51"><span class="linenos">51</span></a>                    <span class="s2">&quot;field_id&quot;</span><span class="p">:</span> <span class="n">campo</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">),</span>
+</span><span id="campos_modelo-52"><a href="#campos_modelo-52"><span class="linenos">52</span></a>                    <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="n">campo</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nome&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">campo</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nome_widget&quot;</span><span class="p">),</span>
+</span><span id="campos_modelo-53"><a href="#campos_modelo-53"><span class="linenos">53</span></a>                    <span class="s2">&quot;widget&quot;</span><span class="p">:</span> <span class="n">campo</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;widget&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">campo</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;tipo&quot;</span><span class="p">),</span>
+</span><span id="campos_modelo-54"><a href="#campos_modelo-54"><span class="linenos">54</span></a>                    <span class="s2">&quot;tipo&quot;</span><span class="p">:</span> <span class="n">tipo</span><span class="p">,</span>
+</span><span id="campos_modelo-55"><a href="#campos_modelo-55"><span class="linenos">55</span></a>                    <span class="s2">&quot;py_tipo&quot;</span><span class="p">:</span> <span class="n">_tipo_para_python</span><span class="p">(</span><span class="n">tipo</span><span class="p">),</span>
+</span><span id="campos_modelo-56"><a href="#campos_modelo-56"><span class="linenos">56</span></a>                    <span class="s2">&quot;secao&quot;</span><span class="p">:</span> <span class="n">secao</span><span class="p">,</span>
+</span><span id="campos_modelo-57"><a href="#campos_modelo-57"><span class="linenos">57</span></a>                <span class="p">}</span>
+</span><span id="campos_modelo-58"><a href="#campos_modelo-58"><span class="linenos">58</span></a>            <span class="p">)</span>
+</span><span id="campos_modelo-59"><a href="#campos_modelo-59"><span class="linenos">59</span></a>        <span class="k">return</span> <span class="n">campos</span>
+</span><span id="campos_modelo-60"><a href="#campos_modelo-60"><span class="linenos">60</span></a>
+</span><span id="campos_modelo-61"><a href="#campos_modelo-61"><span class="linenos">61</span></a>    <span class="n">todos</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="campos_modelo-62"><a href="#campos_modelo-62"><span class="linenos">62</span></a>        <span class="n">extrair_campos</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;metadados_iniciais&quot;</span><span class="p">),</span> <span class="s2">&quot;metadados_iniciais&quot;</span><span class="p">)</span>
+</span><span id="campos_modelo-63"><a href="#campos_modelo-63"><span class="linenos">63</span></a>        <span class="o">+</span> <span class="n">extrair_campos</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;campos&quot;</span><span class="p">),</span> <span class="s2">&quot;campos&quot;</span><span class="p">)</span>
+</span><span id="campos_modelo-64"><a href="#campos_modelo-64"><span class="linenos">64</span></a>        <span class="o">+</span> <span class="n">extrair_campos</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;metadados_finais&quot;</span><span class="p">),</span> <span class="s2">&quot;metadados_finais&quot;</span><span class="p">)</span>
+</span><span id="campos_modelo-65"><a href="#campos_modelo-65"><span class="linenos">65</span></a>    <span class="p">)</span>
+</span><span id="campos_modelo-66"><a href="#campos_modelo-66"><span class="linenos">66</span></a>
+</span><span id="campos_modelo-67"><a href="#campos_modelo-67"><span class="linenos">67</span></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">todos</span><span class="p">:</span>
+</span><span id="campos_modelo-68"><a href="#campos_modelo-68"><span class="linenos">68</span></a>        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+</span><span id="campos_modelo-69"><a href="#campos_modelo-69"><span class="linenos">69</span></a>            <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;field_id&quot;</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="s2">&quot;widget&quot;</span><span class="p">,</span> <span class="s2">&quot;tipo&quot;</span><span class="p">,</span> <span class="s2">&quot;py_tipo&quot;</span><span class="p">,</span> <span class="s2">&quot;secao&quot;</span><span class="p">]</span>
+</span><span id="campos_modelo-70"><a href="#campos_modelo-70"><span class="linenos">70</span></a>        <span class="p">)</span>
+</span><span id="campos_modelo-71"><a href="#campos_modelo-71"><span class="linenos">71</span></a>
+</span><span id="campos_modelo-72"><a href="#campos_modelo-72"><span class="linenos">72</span></a>    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">todos</span><span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Retorna os campos de um modelo, consolidando metadados e campos principais.</p>
+
+<p>Returns:
+    DataFrame com colunas <code>field_id</code>, <code>label</code>, <code>widget</code>, <code>tipo</code>, <code>py_tipo</code>, <code>secao</code>.</p>
+</div>
+
+
+                </section>
+                <section id="listar_fichas">
+                            <input id="listar_fichas-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">listar_fichas</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">projeto_id</span><span class="p">:</span> <span class="nb">str</span>, </span><span class="param"><span class="n">modelo_id</span><span class="p">:</span> <span class="nb">str</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span>:</span></span>
+
+                <label class="view-source-button" for="listar_fichas-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#listar_fichas"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="listar_fichas-12"><a href="#listar_fichas-12"><span class="linenos">12</span></a><span class="k">def</span><span class="w"> </span><span class="nf">listar_fichas</span><span class="p">(</span><span class="n">projeto_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">modelo_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+</span><span id="listar_fichas-13"><a href="#listar_fichas-13"><span class="linenos">13</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Retorna as fichas de um modelo em um projeto, com dados expandidos.</span>
+</span><span id="listar_fichas-14"><a href="#listar_fichas-14"><span class="linenos">14</span></a>
+</span><span id="listar_fichas-15"><a href="#listar_fichas-15"><span class="linenos">15</span></a><span class="sd">    Cada linha do DataFrame corresponde a uma observação (item de `dados`).</span>
+</span><span id="listar_fichas-16"><a href="#listar_fichas-16"><span class="linenos">16</span></a><span class="sd">    Campos complexos (espécie, coordenada, ponto, lista) ficam como colunas</span>
+</span><span id="listar_fichas-17"><a href="#listar_fichas-17"><span class="linenos">17</span></a><span class="sd">    de dicionários — use `expandir_especies()`, `expandir_coordenadas()` ou</span>
+</span><span id="listar_fichas-18"><a href="#listar_fichas-18"><span class="linenos">18</span></a><span class="sd">    `expandir_ponto()` para separá-los.</span>
+</span><span id="listar_fichas-19"><a href="#listar_fichas-19"><span class="linenos">19</span></a>
+</span><span id="listar_fichas-20"><a href="#listar_fichas-20"><span class="linenos">20</span></a><span class="sd">    Args:</span>
+</span><span id="listar_fichas-21"><a href="#listar_fichas-21"><span class="linenos">21</span></a><span class="sd">        projeto_id: ID do projeto.</span>
+</span><span id="listar_fichas-22"><a href="#listar_fichas-22"><span class="linenos">22</span></a><span class="sd">        modelo_id: ID do modelo.</span>
+</span><span id="listar_fichas-23"><a href="#listar_fichas-23"><span class="linenos">23</span></a>
+</span><span id="listar_fichas-24"><a href="#listar_fichas-24"><span class="linenos">24</span></a><span class="sd">    Returns:</span>
+</span><span id="listar_fichas-25"><a href="#listar_fichas-25"><span class="linenos">25</span></a><span class="sd">        DataFrame com colunas de metadados da ficha mais os campos do modelo.</span>
+</span><span id="listar_fichas-26"><a href="#listar_fichas-26"><span class="linenos">26</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="listar_fichas-27"><a href="#listar_fichas-27"><span class="linenos">27</span></a>    <span class="n">res</span> <span class="o">=</span> <span class="n">_ficharium_erro</span><span class="p">(</span>
+</span><span id="listar_fichas-28"><a href="#listar_fichas-28"><span class="linenos">28</span></a>        <span class="k">lambda</span><span class="p">:</span> <span class="n">_ficharium_requisicao</span><span class="p">(</span>
+</span><span id="listar_fichas-29"><a href="#listar_fichas-29"><span class="linenos">29</span></a>            <span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;fichas/projeto/</span><span class="si">{</span><span class="n">projeto_id</span><span class="si">}</span><span class="s2">/modelo/</span><span class="si">{</span><span class="n">modelo_id</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="listar_fichas-30"><a href="#listar_fichas-30"><span class="linenos">30</span></a>        <span class="p">),</span>
+</span><span id="listar_fichas-31"><a href="#listar_fichas-31"><span class="linenos">31</span></a>        <span class="sa">f</span><span class="s2">&quot;Erro ao listar fichas do modelo &#39;</span><span class="si">{</span><span class="n">modelo_id</span><span class="si">}</span><span class="s2">&#39; no projeto &#39;</span><span class="si">{</span><span class="n">projeto_id</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">,</span>
+</span><span id="listar_fichas-32"><a href="#listar_fichas-32"><span class="linenos">32</span></a>    <span class="p">)</span>
+</span><span id="listar_fichas-33"><a href="#listar_fichas-33"><span class="linenos">33</span></a>
+</span><span id="listar_fichas-34"><a href="#listar_fichas-34"><span class="linenos">34</span></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">res</span><span class="p">:</span>
+</span><span id="listar_fichas-35"><a href="#listar_fichas-35"><span class="linenos">35</span></a>        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+</span><span id="listar_fichas-36"><a href="#listar_fichas-36"><span class="linenos">36</span></a>            <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ficha_id&quot;</span><span class="p">,</span> <span class="s2">&quot;id_app&quot;</span><span class="p">,</span> <span class="s2">&quot;created&quot;</span><span class="p">,</span> <span class="s2">&quot;updated&quot;</span><span class="p">]</span>
+</span><span id="listar_fichas-37"><a href="#listar_fichas-37"><span class="linenos">37</span></a>        <span class="p">)</span>
+</span><span id="listar_fichas-38"><a href="#listar_fichas-38"><span class="linenos">38</span></a>
+</span><span id="listar_fichas-39"><a href="#listar_fichas-39"><span class="linenos">39</span></a>    <span class="n">campos</span> <span class="o">=</span> <span class="n">campos_modelo</span><span class="p">(</span><span class="n">modelo_id</span><span class="p">)</span>
+</span><span id="listar_fichas-40"><a href="#listar_fichas-40"><span class="linenos">40</span></a>    <span class="n">mapa</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="listar_fichas-41"><a href="#listar_fichas-41"><span class="linenos">41</span></a>        <span class="n">row</span><span class="p">[</span><span class="s2">&quot;field_id&quot;</span><span class="p">]:</span> <span class="p">{</span><span class="s2">&quot;tipo&quot;</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;tipo&quot;</span><span class="p">],</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]}</span>
+</span><span id="listar_fichas-42"><a href="#listar_fichas-42"><span class="linenos">42</span></a>        <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">campos</span><span class="o">.</span><span class="n">iterrows</span><span class="p">()</span>
+</span><span id="listar_fichas-43"><a href="#listar_fichas-43"><span class="linenos">43</span></a>    <span class="p">}</span>
+</span><span id="listar_fichas-44"><a href="#listar_fichas-44"><span class="linenos">44</span></a>
+</span><span id="listar_fichas-45"><a href="#listar_fichas-45"><span class="linenos">45</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">converter_bloco</span><span class="p">(</span><span class="n">bloco</span><span class="p">):</span>
+</span><span id="listar_fichas-46"><a href="#listar_fichas-46"><span class="linenos">46</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">bloco</span><span class="p">:</span>
+</span><span id="listar_fichas-47"><a href="#listar_fichas-47"><span class="linenos">47</span></a>            <span class="k">return</span> <span class="p">{}</span>
+</span><span id="listar_fichas-48"><a href="#listar_fichas-48"><span class="linenos">48</span></a>        <span class="n">out</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="listar_fichas-49"><a href="#listar_fichas-49"><span class="linenos">49</span></a>        <span class="k">for</span> <span class="n">fid</span><span class="p">,</span> <span class="n">valor</span> <span class="ow">in</span> <span class="n">bloco</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="listar_fichas-50"><a href="#listar_fichas-50"><span class="linenos">50</span></a>            <span class="n">info</span> <span class="o">=</span> <span class="n">mapa</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">fid</span><span class="p">)</span>
+</span><span id="listar_fichas-51"><a href="#listar_fichas-51"><span class="linenos">51</span></a>            <span class="k">if</span> <span class="n">info</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="listar_fichas-52"><a href="#listar_fichas-52"><span class="linenos">52</span></a>                <span class="k">continue</span>
+</span><span id="listar_fichas-53"><a href="#listar_fichas-53"><span class="linenos">53</span></a>            <span class="k">if</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;tipo&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;semvalor&quot;</span><span class="p">:</span>
+</span><span id="listar_fichas-54"><a href="#listar_fichas-54"><span class="linenos">54</span></a>                <span class="k">continue</span>
+</span><span id="listar_fichas-55"><a href="#listar_fichas-55"><span class="linenos">55</span></a>            <span class="n">out</span><span class="p">[</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">_converter_valor</span><span class="p">(</span><span class="n">valor</span><span class="p">,</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;tipo&quot;</span><span class="p">])</span>
+</span><span id="listar_fichas-56"><a href="#listar_fichas-56"><span class="linenos">56</span></a>        <span class="k">return</span> <span class="n">out</span>
+</span><span id="listar_fichas-57"><a href="#listar_fichas-57"><span class="linenos">57</span></a>
+</span><span id="listar_fichas-58"><a href="#listar_fichas-58"><span class="linenos">58</span></a>    <span class="n">linhas</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="listar_fichas-59"><a href="#listar_fichas-59"><span class="linenos">59</span></a>
+</span><span id="listar_fichas-60"><a href="#listar_fichas-60"><span class="linenos">60</span></a>    <span class="k">for</span> <span class="n">ficha</span> <span class="ow">in</span> <span class="n">res</span><span class="p">:</span>
+</span><span id="listar_fichas-61"><a href="#listar_fichas-61"><span class="linenos">61</span></a>        <span class="n">base</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="listar_fichas-62"><a href="#listar_fichas-62"><span class="linenos">62</span></a>            <span class="s2">&quot;ficha_id&quot;</span><span class="p">:</span> <span class="n">ficha</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">),</span>
+</span><span id="listar_fichas-63"><a href="#listar_fichas-63"><span class="linenos">63</span></a>            <span class="s2">&quot;id_app&quot;</span><span class="p">:</span> <span class="n">ficha</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;id_app&quot;</span><span class="p">),</span>
+</span><span id="listar_fichas-64"><a href="#listar_fichas-64"><span class="linenos">64</span></a>            <span class="s2">&quot;created&quot;</span><span class="p">:</span> <span class="n">ficha</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;created&quot;</span><span class="p">),</span>
+</span><span id="listar_fichas-65"><a href="#listar_fichas-65"><span class="linenos">65</span></a>            <span class="s2">&quot;updated&quot;</span><span class="p">:</span> <span class="n">ficha</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;updated&quot;</span><span class="p">),</span>
+</span><span id="listar_fichas-66"><a href="#listar_fichas-66"><span class="linenos">66</span></a>        <span class="p">}</span>
+</span><span id="listar_fichas-67"><a href="#listar_fichas-67"><span class="linenos">67</span></a>
+</span><span id="listar_fichas-68"><a href="#listar_fichas-68"><span class="linenos">68</span></a>        <span class="n">meta_ini</span> <span class="o">=</span> <span class="n">converter_bloco</span><span class="p">(</span><span class="n">ficha</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;metadados_iniciais&quot;</span><span class="p">))</span>
+</span><span id="listar_fichas-69"><a href="#listar_fichas-69"><span class="linenos">69</span></a>        <span class="n">meta_fin</span> <span class="o">=</span> <span class="n">converter_bloco</span><span class="p">(</span><span class="n">ficha</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;metadados_finais&quot;</span><span class="p">))</span>
+</span><span id="listar_fichas-70"><a href="#listar_fichas-70"><span class="linenos">70</span></a>
+</span><span id="listar_fichas-71"><a href="#listar_fichas-71"><span class="linenos">71</span></a>        <span class="n">dados</span> <span class="o">=</span> <span class="n">ficha</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dados&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[{}]</span>
+</span><span id="listar_fichas-72"><a href="#listar_fichas-72"><span class="linenos">72</span></a>
+</span><span id="listar_fichas-73"><a href="#listar_fichas-73"><span class="linenos">73</span></a>        <span class="k">for</span> <span class="n">obs</span> <span class="ow">in</span> <span class="n">dados</span><span class="p">:</span>
+</span><span id="listar_fichas-74"><a href="#listar_fichas-74"><span class="linenos">74</span></a>            <span class="n">obs_conv</span> <span class="o">=</span> <span class="n">converter_bloco</span><span class="p">(</span><span class="n">obs</span><span class="p">)</span>
+</span><span id="listar_fichas-75"><a href="#listar_fichas-75"><span class="linenos">75</span></a>            <span class="n">linhas</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="o">**</span><span class="n">base</span><span class="p">,</span> <span class="o">**</span><span class="n">meta_ini</span><span class="p">,</span> <span class="o">**</span><span class="n">obs_conv</span><span class="p">,</span> <span class="o">**</span><span class="n">meta_fin</span><span class="p">})</span>
+</span><span id="listar_fichas-76"><a href="#listar_fichas-76"><span class="linenos">76</span></a>
+</span><span id="listar_fichas-77"><a href="#listar_fichas-77"><span class="linenos">77</span></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">linhas</span><span class="p">:</span>
+</span><span id="listar_fichas-78"><a href="#listar_fichas-78"><span class="linenos">78</span></a>        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+</span><span id="listar_fichas-79"><a href="#listar_fichas-79"><span class="linenos">79</span></a>            <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ficha_id&quot;</span><span class="p">,</span> <span class="s2">&quot;id_app&quot;</span><span class="p">,</span> <span class="s2">&quot;created&quot;</span><span class="p">,</span> <span class="s2">&quot;updated&quot;</span><span class="p">]</span>
+</span><span id="listar_fichas-80"><a href="#listar_fichas-80"><span class="linenos">80</span></a>        <span class="p">)</span>
+</span><span id="listar_fichas-81"><a href="#listar_fichas-81"><span class="linenos">81</span></a>
+</span><span id="listar_fichas-82"><a href="#listar_fichas-82"><span class="linenos">82</span></a>    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">linhas</span><span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Retorna as fichas de um modelo em um projeto, com dados expandidos.</p>
+
+<p>Cada linha do DataFrame corresponde a uma observação (item de <code>dados</code>).
+Campos complexos (espécie, coordenada, ponto, lista) ficam como colunas
+de dicionários — use <code><a href="#expandir_especies">expandir_especies()</a></code>, <code><a href="#expandir_coordenadas">expandir_coordenadas()</a></code> ou
+<code><a href="#expandir_ponto">expandir_ponto()</a></code> para separá-los.</p>
+
+<p>Args:
+    projeto_id: ID do projeto.
+    modelo_id: ID do modelo.</p>
+
+<p>Returns:
+    DataFrame com colunas de metadados da ficha mais os campos do modelo.</p>
+</div>
+
+
+                </section>
+                <section id="ficha">
+                            <input id="ficha-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">ficha</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">ficha_id</span><span class="p">:</span> <span class="nb">str</span></span><span class="return-annotation">) -> <span class="nb">dict</span>:</span></span>
+
+                <label class="view-source-button" for="ficha-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#ficha"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="ficha-85"><a href="#ficha-85"><span class="linenos">85</span></a><span class="k">def</span><span class="w"> </span><span class="nf">ficha</span><span class="p">(</span><span class="n">ficha_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="ficha-86"><a href="#ficha-86"><span class="linenos">86</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Retorna os dados completos de uma ficha específica.&quot;&quot;&quot;</span>
+</span><span id="ficha-87"><a href="#ficha-87"><span class="linenos">87</span></a>    <span class="k">return</span> <span class="n">_ficharium_erro</span><span class="p">(</span>
+</span><span id="ficha-88"><a href="#ficha-88"><span class="linenos">88</span></a>        <span class="k">lambda</span><span class="p">:</span> <span class="n">_ficharium_requisicao</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;fichas/ficha/</span><span class="si">{</span><span class="n">ficha_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
+</span><span id="ficha-89"><a href="#ficha-89"><span class="linenos">89</span></a>        <span class="sa">f</span><span class="s2">&quot;Ficha &#39;</span><span class="si">{</span><span class="n">ficha_id</span><span class="si">}</span><span class="s2">&#39; nao encontrada&quot;</span><span class="p">,</span>
+</span><span id="ficha-90"><a href="#ficha-90"><span class="linenos">90</span></a>    <span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Retorna os dados completos de uma ficha específica.</p>
+</div>
+
+
+                </section>
+                <section id="listar_especies">
+                            <input id="listar_especies-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">listar_especies</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">projeto_id</span><span class="p">:</span> <span class="nb">str</span>, </span><span class="param"><span class="n">busca</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span>:</span></span>
+
+                <label class="view-source-button" for="listar_especies-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#listar_especies"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="listar_especies-11"><a href="#listar_especies-11"><span class="linenos">11</span></a><span class="k">def</span><span class="w"> </span><span class="nf">listar_especies</span><span class="p">(</span>
+</span><span id="listar_especies-12"><a href="#listar_especies-12"><span class="linenos">12</span></a>    <span class="n">projeto_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">busca</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="listar_especies-13"><a href="#listar_especies-13"><span class="linenos">13</span></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+</span><span id="listar_especies-14"><a href="#listar_especies-14"><span class="linenos">14</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Retorna a lista consolidada de espécies registradas em um projeto.</span>
+</span><span id="listar_especies-15"><a href="#listar_especies-15"><span class="linenos">15</span></a>
+</span><span id="listar_especies-16"><a href="#listar_especies-16"><span class="linenos">16</span></a><span class="sd">    Args:</span>
+</span><span id="listar_especies-17"><a href="#listar_especies-17"><span class="linenos">17</span></a><span class="sd">        projeto_id: ID do projeto.</span>
+</span><span id="listar_especies-18"><a href="#listar_especies-18"><span class="linenos">18</span></a><span class="sd">        busca: Filtro parcial pelo nome científico (case-insensitive).</span>
+</span><span id="listar_especies-19"><a href="#listar_especies-19"><span class="linenos">19</span></a>
+</span><span id="listar_especies-20"><a href="#listar_especies-20"><span class="linenos">20</span></a><span class="sd">    Returns:</span>
+</span><span id="listar_especies-21"><a href="#listar_especies-21"><span class="linenos">21</span></a><span class="sd">        DataFrame com colunas `nc`, `grupo`, `total_registros`, `metodologias`.</span>
+</span><span id="listar_especies-22"><a href="#listar_especies-22"><span class="linenos">22</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="listar_especies-23"><a href="#listar_especies-23"><span class="linenos">23</span></a>    <span class="n">res</span> <span class="o">=</span> <span class="n">_ficharium_erro</span><span class="p">(</span>
+</span><span id="listar_especies-24"><a href="#listar_especies-24"><span class="linenos">24</span></a>        <span class="k">lambda</span><span class="p">:</span> <span class="n">_ficharium_requisicao</span><span class="p">(</span>
+</span><span id="listar_especies-25"><a href="#listar_especies-25"><span class="linenos">25</span></a>            <span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;fichas/</span><span class="si">{</span><span class="n">projeto_id</span><span class="si">}</span><span class="s2">/especies&quot;</span>
+</span><span id="listar_especies-26"><a href="#listar_especies-26"><span class="linenos">26</span></a>        <span class="p">),</span>
+</span><span id="listar_especies-27"><a href="#listar_especies-27"><span class="linenos">27</span></a>        <span class="sa">f</span><span class="s2">&quot;Erro ao listar especies do projeto &#39;</span><span class="si">{</span><span class="n">projeto_id</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">,</span>
+</span><span id="listar_especies-28"><a href="#listar_especies-28"><span class="linenos">28</span></a>    <span class="p">)</span>
+</span><span id="listar_especies-29"><a href="#listar_especies-29"><span class="linenos">29</span></a>
+</span><span id="listar_especies-30"><a href="#listar_especies-30"><span class="linenos">30</span></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+</span><span id="listar_especies-31"><a href="#listar_especies-31"><span class="linenos">31</span></a>        <span class="p">{</span>
+</span><span id="listar_especies-32"><a href="#listar_especies-32"><span class="linenos">32</span></a>            <span class="s2">&quot;nc&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;especie&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">],</span>
+</span><span id="listar_especies-33"><a href="#listar_especies-33"><span class="linenos">33</span></a>            <span class="s2">&quot;grupo&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;grupo&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">],</span>
+</span><span id="listar_especies-34"><a href="#listar_especies-34"><span class="linenos">34</span></a>            <span class="s2">&quot;total_registros&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;total_registros&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">],</span>
+</span><span id="listar_especies-35"><a href="#listar_especies-35"><span class="linenos">35</span></a>            <span class="s2">&quot;metodologias&quot;</span><span class="p">:</span> <span class="p">[</span>
+</span><span id="listar_especies-36"><a href="#listar_especies-36"><span class="linenos">36</span></a>                <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;metodologias&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[])]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span>
+</span><span id="listar_especies-37"><a href="#listar_especies-37"><span class="linenos">37</span></a>            <span class="p">],</span>
+</span><span id="listar_especies-38"><a href="#listar_especies-38"><span class="linenos">38</span></a>        <span class="p">}</span>
+</span><span id="listar_especies-39"><a href="#listar_especies-39"><span class="linenos">39</span></a>    <span class="p">)</span>
+</span><span id="listar_especies-40"><a href="#listar_especies-40"><span class="linenos">40</span></a>
+</span><span id="listar_especies-41"><a href="#listar_especies-41"><span class="linenos">41</span></a>    <span class="k">if</span> <span class="n">busca</span><span class="p">:</span>
+</span><span id="listar_especies-42"><a href="#listar_especies-42"><span class="linenos">42</span></a>        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;nc&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">busca</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span>
+</span><span id="listar_especies-43"><a href="#listar_especies-43"><span class="linenos">43</span></a>
+</span><span id="listar_especies-44"><a href="#listar_especies-44"><span class="linenos">44</span></a>    <span class="k">return</span> <span class="n">df</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Retorna a lista consolidada de espécies registradas em um projeto.</p>
+
+<p>Args:
+    projeto_id: ID do projeto.
+    busca: Filtro parcial pelo nome científico (case-insensitive).</p>
+
+<p>Returns:
+    DataFrame com colunas <code>nc</code>, <code>grupo</code>, <code>total_registros</code>, <code>metodologias</code>.</p>
+</div>
+
+
+                </section>
+                <section id="expandir_especies">
+                            <input id="expandir_especies-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">expandir_especies</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">df</span><span class="p">:</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span>, </span><span class="param"><span class="n">coluna</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;especie&#39;</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span>:</span></span>
+
+                <label class="view-source-button" for="expandir_especies-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#expandir_especies"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="expandir_especies-9"><a href="#expandir_especies-9"><span class="linenos"> 9</span></a><span class="k">def</span><span class="w"> </span><span class="nf">expandir_especies</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">coluna</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;especie&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+</span><span id="expandir_especies-10"><a href="#expandir_especies-10"><span class="linenos">10</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Expande uma coluna de espécies em `{coluna}_nc`, `{coluna}_np` e `{coluna}_grupo`.</span>
+</span><span id="expandir_especies-11"><a href="#expandir_especies-11"><span class="linenos">11</span></a>
+</span><span id="expandir_especies-12"><a href="#expandir_especies-12"><span class="linenos">12</span></a><span class="sd">    Args:</span>
+</span><span id="expandir_especies-13"><a href="#expandir_especies-13"><span class="linenos">13</span></a><span class="sd">        df: DataFrame com a coluna a expandir.</span>
+</span><span id="expandir_especies-14"><a href="#expandir_especies-14"><span class="linenos">14</span></a><span class="sd">        coluna: Nome da coluna (padrão: `&quot;especie&quot;`).</span>
+</span><span id="expandir_especies-15"><a href="#expandir_especies-15"><span class="linenos">15</span></a>
+</span><span id="expandir_especies-16"><a href="#expandir_especies-16"><span class="linenos">16</span></a><span class="sd">    Returns:</span>
+</span><span id="expandir_especies-17"><a href="#expandir_especies-17"><span class="linenos">17</span></a><span class="sd">        DataFrame com as colunas expandidas e a coluna original removida.</span>
+</span><span id="expandir_especies-18"><a href="#expandir_especies-18"><span class="linenos">18</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="expandir_especies-19"><a href="#expandir_especies-19"><span class="linenos">19</span></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span><span id="expandir_especies-20"><a href="#expandir_especies-20"><span class="linenos">20</span></a>    <span class="n">col</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">coluna</span><span class="p">]</span>
+</span><span id="expandir_especies-21"><a href="#expandir_especies-21"><span class="linenos">21</span></a>    <span class="n">df</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">coluna</span><span class="si">}</span><span class="s2">_nc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">col</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nc&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="expandir_especies-22"><a href="#expandir_especies-22"><span class="linenos">22</span></a>    <span class="n">df</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">coluna</span><span class="si">}</span><span class="s2">_np&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">col</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;np&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="expandir_especies-23"><a href="#expandir_especies-23"><span class="linenos">23</span></a>    <span class="n">df</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">coluna</span><span class="si">}</span><span class="s2">_grupo&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">col</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;grupo&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="expandir_especies-24"><a href="#expandir_especies-24"><span class="linenos">24</span></a>    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">coluna</span><span class="p">])</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Expande uma coluna de espécies em <code>{coluna}_nc</code>, <code>{coluna}_np</code> e <code>{coluna}_grupo</code>.</p>
+
+<p>Args:
+    df: DataFrame com a coluna a expandir.
+    coluna: Nome da coluna (padrão: <code>"especie"</code>).</p>
+
+<p>Returns:
+    DataFrame com as colunas expandidas e a coluna original removida.</p>
+</div>
+
+
+                </section>
+                <section id="expandir_coordenadas">
+                            <input id="expandir_coordenadas-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">expandir_coordenadas</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">df</span><span class="p">:</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span>, </span><span class="param"><span class="n">coluna</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;coordenadas&#39;</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span>:</span></span>
+
+                <label class="view-source-button" for="expandir_coordenadas-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#expandir_coordenadas"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="expandir_coordenadas-27"><a href="#expandir_coordenadas-27"><span class="linenos">27</span></a><span class="k">def</span><span class="w"> </span><span class="nf">expandir_coordenadas</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">coluna</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;coordenadas&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+</span><span id="expandir_coordenadas-28"><a href="#expandir_coordenadas-28"><span class="linenos">28</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Expande uma coluna de coordenadas em `{coluna}_latitude` e `{coluna}_longitude`.</span>
+</span><span id="expandir_coordenadas-29"><a href="#expandir_coordenadas-29"><span class="linenos">29</span></a>
+</span><span id="expandir_coordenadas-30"><a href="#expandir_coordenadas-30"><span class="linenos">30</span></a><span class="sd">    Args:</span>
+</span><span id="expandir_coordenadas-31"><a href="#expandir_coordenadas-31"><span class="linenos">31</span></a><span class="sd">        df: DataFrame com a coluna a expandir.</span>
+</span><span id="expandir_coordenadas-32"><a href="#expandir_coordenadas-32"><span class="linenos">32</span></a><span class="sd">        coluna: Nome da coluna (padrão: `&quot;coordenadas&quot;`).</span>
+</span><span id="expandir_coordenadas-33"><a href="#expandir_coordenadas-33"><span class="linenos">33</span></a>
+</span><span id="expandir_coordenadas-34"><a href="#expandir_coordenadas-34"><span class="linenos">34</span></a><span class="sd">    Returns:</span>
+</span><span id="expandir_coordenadas-35"><a href="#expandir_coordenadas-35"><span class="linenos">35</span></a><span class="sd">        DataFrame com as colunas expandidas e a coluna original removida.</span>
+</span><span id="expandir_coordenadas-36"><a href="#expandir_coordenadas-36"><span class="linenos">36</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="expandir_coordenadas-37"><a href="#expandir_coordenadas-37"><span class="linenos">37</span></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span><span id="expandir_coordenadas-38"><a href="#expandir_coordenadas-38"><span class="linenos">38</span></a>    <span class="n">col</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">coluna</span><span class="p">]</span>
+</span><span id="expandir_coordenadas-39"><a href="#expandir_coordenadas-39"><span class="linenos">39</span></a>    <span class="n">df</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">coluna</span><span class="si">}</span><span class="s2">_latitude&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">col</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;latitude&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="expandir_coordenadas-40"><a href="#expandir_coordenadas-40"><span class="linenos">40</span></a>    <span class="n">df</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">coluna</span><span class="si">}</span><span class="s2">_longitude&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">col</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;longitude&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="expandir_coordenadas-41"><a href="#expandir_coordenadas-41"><span class="linenos">41</span></a>    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">coluna</span><span class="p">])</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Expande uma coluna de coordenadas em <code>{coluna}_latitude</code> e <code>{coluna}_longitude</code>.</p>
+
+<p>Args:
+    df: DataFrame com a coluna a expandir.
+    coluna: Nome da coluna (padrão: <code>"coordenadas"</code>).</p>
+
+<p>Returns:
+    DataFrame com as colunas expandidas e a coluna original removida.</p>
+</div>
+
+
+                </section>
+                <section id="expandir_ponto">
+                            <input id="expandir_ponto-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">expandir_ponto</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">df</span><span class="p">:</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span>, </span><span class="param"><span class="n">coluna</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;ponto&#39;</span></span><span class="return-annotation">) -> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span>:</span></span>
+
+                <label class="view-source-button" for="expandir_ponto-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#expandir_ponto"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="expandir_ponto-44"><a href="#expandir_ponto-44"><span class="linenos">44</span></a><span class="k">def</span><span class="w"> </span><span class="nf">expandir_ponto</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">coluna</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;ponto&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+</span><span id="expandir_ponto-45"><a href="#expandir_ponto-45"><span class="linenos">45</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Expande uma coluna de ponto em `{coluna}_nome`, `{coluna}_id`, `{coluna}_latitude` e `{coluna}_longitude`.</span>
+</span><span id="expandir_ponto-46"><a href="#expandir_ponto-46"><span class="linenos">46</span></a>
+</span><span id="expandir_ponto-47"><a href="#expandir_ponto-47"><span class="linenos">47</span></a><span class="sd">    Args:</span>
+</span><span id="expandir_ponto-48"><a href="#expandir_ponto-48"><span class="linenos">48</span></a><span class="sd">        df: DataFrame com a coluna a expandir.</span>
+</span><span id="expandir_ponto-49"><a href="#expandir_ponto-49"><span class="linenos">49</span></a><span class="sd">        coluna: Nome da coluna (padrão: `&quot;ponto&quot;`).</span>
+</span><span id="expandir_ponto-50"><a href="#expandir_ponto-50"><span class="linenos">50</span></a>
+</span><span id="expandir_ponto-51"><a href="#expandir_ponto-51"><span class="linenos">51</span></a><span class="sd">    Returns:</span>
+</span><span id="expandir_ponto-52"><a href="#expandir_ponto-52"><span class="linenos">52</span></a><span class="sd">        DataFrame com as colunas expandidas e a coluna original removida.</span>
+</span><span id="expandir_ponto-53"><a href="#expandir_ponto-53"><span class="linenos">53</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="expandir_ponto-54"><a href="#expandir_ponto-54"><span class="linenos">54</span></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span><span id="expandir_ponto-55"><a href="#expandir_ponto-55"><span class="linenos">55</span></a>    <span class="n">col</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">coluna</span><span class="p">]</span>
+</span><span id="expandir_ponto-56"><a href="#expandir_ponto-56"><span class="linenos">56</span></a>    <span class="n">df</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">coluna</span><span class="si">}</span><span class="s2">_nome&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">col</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nome&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="expandir_ponto-57"><a href="#expandir_ponto-57"><span class="linenos">57</span></a>    <span class="n">df</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">coluna</span><span class="si">}</span><span class="s2">_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">col</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="expandir_ponto-58"><a href="#expandir_ponto-58"><span class="linenos">58</span></a>    <span class="n">df</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">coluna</span><span class="si">}</span><span class="s2">_latitude&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">col</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;latitude&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="expandir_ponto-59"><a href="#expandir_ponto-59"><span class="linenos">59</span></a>    <span class="n">df</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">coluna</span><span class="si">}</span><span class="s2">_longitude&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">col</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;longitude&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="expandir_ponto-60"><a href="#expandir_ponto-60"><span class="linenos">60</span></a>    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">coluna</span><span class="p">])</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Expande uma coluna de ponto em <code>{coluna}_nome</code>, <code>{coluna}_id</code>, <code>{coluna}_latitude</code> e <code>{coluna}_longitude</code>.</p>
+
+<p>Args:
+    df: DataFrame com a coluna a expandir.
+    coluna: Nome da coluna (padrão: <code>"ponto"</code>).</p>
+
+<p>Returns:
+    DataFrame com as colunas expandidas e a coluna original removida.</p>
+</div>
+
+
+                </section>
+    </main>
+</body>
+</html>
