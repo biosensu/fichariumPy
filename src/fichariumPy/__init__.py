@@ -9,7 +9,7 @@ e acessar listas de espécies consolidadas.
 ## Início rápido
 
 ```python
-from ficharium import *
+from fichariumPy import *
 
 ficharium_login("seu@email.com")
 projetos = listar_projetos()

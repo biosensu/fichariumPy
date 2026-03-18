@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install .[docs]
-      - run: pdoc ficharium -o _site/ --template-directory docs/
+      - run: pdoc fichariumPy -o _site/ --template-directory docs/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site/

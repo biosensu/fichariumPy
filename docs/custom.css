@@ -1,40 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300..900;1,300..900&display=swap");
 
+/* Variáveis do pdoc — sobrescreve o theme.css */
 :root {
     --pdoc-background: #0d161c;
-    --pdoc-text: #c1e5eb;
-    --pdoc-accent: #5dbac0;
-    --pdoc-muted: #7a9da3;
-    --pdoc-bg-code: #131f28;
+}
+
+.pdoc {
+    --text: #c1e5eb;
+    --muted: #7a9da3;
+    --link: #5dbac0;
+    --link-hover: #8ad3d8;
+    --code: #131f28;
+    --active: #1e3d4a;
+    --accent: #1a2a34;
+    --accent2: #2a3f4d;
+    --nav-hover: rgba(93, 186, 192, 0.1);
+    --name: #8ad3d8;
+    --def: #5dbac0;
+    --annotation: #7a9da3;
 }
 
 html, body {
     background-color: var(--pdoc-background) !important;
-    color: var(--pdoc-text) !important;
     font-family: "Public Sans", sans-serif !important;
 }
 
-a { color: var(--pdoc-accent) !important; }
-a:hover { color: #8ad3d8 !important; }
-
-h1, h2, h3, h4, h5, h6 { color: var(--pdoc-text) !important; }
-
-nav.pdoc { background-color: var(--pdoc-background) !important; }
-nav a { color: var(--pdoc-muted) !important; }
-nav a:hover, nav a.current { color: var(--pdoc-accent) !important; }
-
-code, pre, .pdoc code {
-    background-color: var(--pdoc-bg-code) !important;
-    color: var(--pdoc-text) !important;
+/* Logo com tamanho razoável */
+.docstring img {
+    max-width: 200px;
+    display: block;
+    margin: 0 auto 1.5rem;
 }
-
-.docstring { border-left-color: var(--pdoc-accent) !important; }
-
-input[type="search"] {
-    background-color: var(--pdoc-bg-code) !important;
-    color: var(--pdoc-text) !important;
-    border-color: #1a2a34 !important;
-}
-
-.attr .annotation { color: var(--pdoc-muted) !important; }
-footer { color: var(--pdoc-muted) !important; }

@@ -17,7 +17,7 @@ pip install git+https://github.com/Biosensu/fichariumPy.git
 O token JWT é armazenado em `~/.ficharium_token` e reutilizado entre sessões.
 
 ```python
-from ficharium import *
+from fichariumPy import *
 
 # Login — abre prompt seguro de senha
 ficharium_login("seu@email.com")
