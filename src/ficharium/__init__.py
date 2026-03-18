@@ -1,4 +1,7 @@
-"""Cliente Python para a API [Ficharium Cloud](https://ficharium.cloud).
+"""
+![ficharium](https://raw.githubusercontent.com/Biosensu/fichariumPy/main/fichariumPy.svg)
+
+Cliente Python para a API [Ficharium Cloud](https://ficharium.cloud).
 
 Permite autenticar, listar projetos, modelos e fichas de campo,
 e acessar listas de espécies consolidadas.
