@@ -6,6 +6,12 @@ Cliente Python para a API [Ficharium Cloud](https://ficharium.cloud).
 Permite autenticar, listar projetos, modelos e fichas de campo,
 e acessar listas de espécies consolidadas.
 
+## Instalação
+
+```bash
+pip install git+https://github.com/Biosensu/fichariumPy.git
+```
+
 ## Início rápido
 
 ```python
